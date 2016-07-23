@@ -2,12 +2,26 @@
 <html ng-app="project">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="nv.d3.min.css"/>
+    <link rel="stylesheet" href="calendar-heatmap.css"/>
     <script src="angular.min.js"></script>
     <script src="d3.min.js"></script>
+    <script src="nv.d3.min.js"></script>
     <script src="angular-nvd3.min.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="calendar-heatmap.js"></script>
     <script src="app.js"></script>
+    <script src="json/salesOrders.json"></script>
     <title></title>
   </head>
   <body ng-controller="mainController">
+    <div class="">
+      <calendar-heatmap data="exampleData" color="'#ff0000'" overview="'year'" handler="print"></calendar-heatmap>
+    </div>
+
+<div class=""  ng-include="'json/salesOrders.json'">
+
+</div>
+
   </body>
 </html>
