@@ -238,13 +238,15 @@ angular.module('g1b.calendar-heatmap', []).
 
               // Construct tooltip
               var tooltip_html = '';
-              tooltip_html += '<div class="header"><strong>' + (d.total ? scope.formatTime(d.total) : 'No time') + ' tracked</strong></div>';
+              //tooltip_html += '<div class="header"><strong>' + (d.total ? scope.formatTime(d.total) : 'No time') + ' tracked</strong></div>';
+              tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No time') + ' tracked</strong></div>';
               tooltip_html += '<div>on ' + moment(d.date).format('dddd, MMM Do YYYY') + '</div><br>';
 
               // Add summary to the tooltip
               angular.forEach(d.summary, function (d) {
                 tooltip_html += '<div><span><strong>' + d.name + '</strong></span>';
-                tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
+                //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
+                tooltip_html += '<span>' + d.value + '</span></div>';
               });
 
               // Calculate tooltip position
@@ -549,7 +551,8 @@ angular.module('g1b.calendar-heatmap', []).
               // Construct tooltip
               var tooltip_html = '';
               tooltip_html += '<div class="header"><strong>' + d.name + '</strong></div><br>';
-              tooltip_html += '<div><strong>' + (d.value ? scope.formatTime(d.value) : 'No time') + ' tracked</strong></div>';
+              //tooltip_html += '<div><strong>' + (d.value ? scope.formatTime(d.value) : 'No time') + ' tracked</strong></div>';
+              tooltip_html += '<div><strong>' + (d.value ? d.value : 'No time') + ' tracked</strong></div>';
               tooltip_html += '<div>on ' + moment(date).format('dddd, MMM Do YYYY') + '</div>';
 
               // Calculate tooltip position
@@ -826,7 +829,8 @@ angular.module('g1b.calendar-heatmap', []).
               // Construct tooltip
               var tooltip_html = '';
               tooltip_html += '<div class="header"><strong>' + d.name + '</strong></div><br>';
-              tooltip_html += '<div><strong>' + (d.value ? scope.formatTime(d.value) : 'No time') + ' tracked</strong></div>';
+              //tooltip_html += '<div><strong>' + (d.value ? scope.formatTime(d.value) : 'No time') + ' tracked</strong></div>';
+              tooltip_html += '<div><strong>' + (d.value ? d.value : 'No time') + ' tracked</strong></div>';
               tooltip_html += '<div>on ' + moment(date).format('dddd, MMM Do YYYY') + '</div>';
 
               // Calculate tooltip position
@@ -1012,7 +1016,8 @@ angular.module('g1b.calendar-heatmap', []).
               // Construct tooltip
               var tooltip_html = '';
               tooltip_html += '<div class="header"><strong>' + d.name + '</strong><div><br>';
-              tooltip_html += '<div><strong>' + (d.value ? scope.formatTime(d.value) : 'No time') + ' tracked</strong></div>';
+              //tooltip_html += '<div><strong>' + (d.value ? scope.formatTime(d.value) : 'No time') + ' tracked</strong></div>';
+              tooltip_html += '<div><strong>' + (d.value ? d.value : 'No time') + ' tracked</strong></div>';
               tooltip_html += '<div>on ' + moment(d.date).format('dddd, MMM Do YYYY HH:mm') + '</div>';
 
               // Calculate tooltip position
