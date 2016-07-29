@@ -22,7 +22,7 @@ angular.module('g1b.calendar-heatmap', []).
         var item_gutter = 1;
         var width = 1000;
         var height = 200;
-        var item_size = 10;
+        var item_size = 40;
         var label_padding = 40;
         var max_block_height = 20;
         var transition_duration = 500;
@@ -705,7 +705,7 @@ angular.module('g1b.calendar-heatmap', []).
         /**
          * Draw week overview
          */
-        scope.drawWeekOverview = function () {
+        scope.drawWeekOvervie = function () {
           // Add current overview to the history
           if ( scope.history[scope.history.length-1] !== scope.overview ) {
             scope.history.push(scope.overview);
