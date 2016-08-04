@@ -1,30 +1,13 @@
 var app = angular.module("project", ['nvd3', 'g1b.calendar-heatmap']);
 app.controller("mainController", function($scope, $http) {
     console.log("mainController started...");
-    var d = moment();
-    var yearAgo = moment().add(-1, 'years');
+    var d = moment("2016-04-30", "YYYY-MM-DD");
+    var yearAgo = moment(d).add(-1, 'years');
     //console.log(d.add(1,'days'));
     $scope.salesData = [];
-    $scope.data = [{
-        "date": "2016-01-01",
-        "total": 17164,
-        "details": [{
-            "name": "Project 1",
-            "date": "2016-01-01 12:30:45",
-            "value": 9192
-        }, {
-            "name": "Project 2",
-            "date": "2016-01-01 13:37:00",
-            "value": 6753
-        }, {
-            "name": "Project N",
-            "date": "2016-01-01 17:52:41",
-            "value": 1219
-        }]
-    }];
-    $http.get('json/salesOrders.json')
+    $http.get('json/salesYear.json')
         .then(function(res) {
-            $scope.salesOrders = res.data;
+            //$scope.salesOrders = res.data;
             // for(var i=0;i<res.data.length;i++) {
             //   for(startDate=yearAgo; startDate<=d; startDate.add(1,'days') ){
             //     console.log(moment(startDate).format("YYYY-MM-DD"));
@@ -37,45 +20,45 @@ app.controller("mainController", function($scope, $http) {
 
             //$scope.data=res.data[i].
             //}
-            var allSales = []
-            for (var i = 0; i < res.data.length; i++) {
-                //console.log(moment(startDate).format("YYYY-MM-DD"));
-                //console.log(moment(res.data[i].sales_order_date).format("YYYY-MM-DD"));
-                //if (moment(startDate).format("YYYY-MM-DD") === moment(res.data[i].sales_order_date).format("YYYY-MM-DD")) {
-                //console.log(moment(startDate).format("YYYY-MM-DD") + " == " + res.data[i].sales_order_date);
-                var object = {};
-                object["name"] = res.data[i].item_number;
-                object["date"] = moment(res.data[i].sales_order_date).format("YYYY-MM-DD");
-                object["value"] = parseInt(res.data[i].sales_order_row_quantity, 10); //not true!! need to change to money - sales_order_row_quantity*price
-                allSales.push(object);
-                //}
-                //$scope.data=res.data[i].
-            }
-            console.log(allSales);
-            $scope.data = [];
-            for (var startDate = moment(yearAgo); startDate.isBefore(d); startDate.add(1, 'days')) {
-                var obj = {};
-                obj["date"] = moment(startDate).format("YYYY-MM-DD");
-                obj["total"] = 0;
-                obj["details"] = [];
-                for (var i = 0; i < allSales.length; i++) {
-                    if (moment(startDate).format("YYYY-MM-DD") === moment(allSales[i].date).format("YYYY-MM-DD")) {
-                        //console.log(moment(startDate).format("YYYY-MM-DD") + " == " + res.data[i].sales_order_date);
-                        //not true!! need to change to money - sales_order_row_quantity*price
-                        obj["total"] += allSales[i].value;
-                        obj["details"].push(allSales[i])
-                    }
-                }
-                console.log(obj["total"]);
-                $scope.data.push(obj);
-            }
-            console.log($scope.data);
+            //var allSales = res.data;
+            // for (var i = 0; i < res.data.length; i++) {
+            //     //console.log(moment(startDate).format("YYYY-MM-DD"));
+            //     //console.log(moment(res.data[i].sales_order_date).format("YYYY-MM-DD"));
+            //     //if (moment(startDate).format("YYYY-MM-DD") === moment(res.data[i].sales_order_date).format("YYYY-MM-DD")) {
+            //     //console.log(moment(startDate).format("YYYY-MM-DD") + " == " + res.data[i].sales_order_date);
+            //     var object = {};
+            //     object["name"] = res.data[i].item_number;
+            //     object["date"] = moment(res.data[i].sales_order_date).format("YYYY-MM-DD");
+            //     object["value"] = parseInt(res.data[i].sales_order_row_quantity, 10); //not true!! need to change to money - sales_order_row_quantity*price
+            //     allSales.push(object);
+            //     //}
+            //     //$scope.data=res.data[i].
+            // }
+            //console.log(allSales);
+            //console.log(JSON.stringify(allSales));
+            // for (var startDate = moment(yearAgo); startDate.isBefore(d); startDate.add(1, 'days')) {
+            //     var obj = {};
+            //     obj["date"] = moment(startDate).format("YYYY-MM-DD");
+            //     obj["total"] = 0;
+            //     obj["details"] = [];
+            //     for (var i = 0; i < allSales.length; i++) {
+            //         if (moment(startDate).format("YYYY-MM-DD") === moment(allSales[i].date).format("YYYY-MM-DD")) {
+            //             //console.log(moment(startDate).format("YYYY-MM-DD") + " == " + res.data[i].sales_order_date);
+            //             //not true!! need to change to money - sales_order_row_quantity*price
+            //             obj["total"] += allSales[i].value;
+            //             obj["details"].push(allSales[i])
+            //         }
+            //     }
+            //     $scope.data.push(obj);
+            // }
+            // console.log(JSON.stringify($scope.data));
+            $scope.data = res.data;
         });
 
-    $http.get('json/purchaseOrders.json')
-        .then(function(res) {
-            $scope.prchsOrders = res.data;
-        });
+    // $http.get('json/purchaseOrders.json')
+    //     .then(function(res) {
+    //         $scope.prchsOrders = res.data;
+    //     });
 
     // Initialize random data for the demo
     // var now = moment().endOf('day').toDate();

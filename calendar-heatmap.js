@@ -22,7 +22,7 @@ angular.module('g1b.calendar-heatmap', []).
         var item_gutter = 1;
         var width = 1000;
         var height = 200;
-        var item_size = 40;
+        var item_size = 10;
         var label_padding = 40;
         var max_block_height = 20;
         var transition_duration = 500;
@@ -180,27 +180,27 @@ angular.module('g1b.calendar-heatmap', []).
             .attr('fill', function (d) {
               return ( d.total > 0 ) ? color(d.total) : 'transparent';
             })
-            .on('click', function (d) {
-              if ( in_transition ) { return; }
-
-              // Don't transition if there is no data to show
-              if ( d.total === 0 ) { return; }
-
-              in_transition = true;
-
-              // Set selected date to the one clicked on
-              scope.selected = d;
-
-              // Hide tooltip
-              scope.hideTooltip();
-
-              // Remove all year overview related items and labels
-              scope.removeYearOverview();
-
-              // Redraw the chart
-              scope.overview = 'day';
-              scope.drawChart();
-            })
+            // .on('click', function (d) {
+            //   if ( in_transition ) { return; }
+            //
+            //   // Don't transition if there is no data to show
+            //   if ( d.total === 0 ) { return; }
+            //
+            //   in_transition = true;
+            //
+            //   // Set selected date to the one clicked on
+            //   scope.selected = d;
+            //
+            //   // Hide tooltip
+            //   scope.hideTooltip();
+            //
+            //   // Remove all year overview related items and labels
+            //   scope.removeYearOverview();
+            //
+            //   // Redraw the chart
+            //   scope.overview = 'day';
+            //   scope.drawChart();
+            // })
             .on('mouseover', function (d) {
               if ( in_transition ) { return; }
 
@@ -239,7 +239,7 @@ angular.module('g1b.calendar-heatmap', []).
               // Construct tooltip
               var tooltip_html = '';
               //tooltip_html += '<div class="header"><strong>' + (d.total ? scope.formatTime(d.total) : 'No time') + ' tracked</strong></div>';
-              tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No time') + ' tracked</strong></div>';
+              tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No time') + ' items</strong></div>';
               tooltip_html += '<div>on ' + moment(d.date).format('dddd, MMM Do YYYY') + '</div><br>';
 
               // Add summary to the tooltip
@@ -314,8 +314,8 @@ angular.module('g1b.calendar-heatmap', []).
                 });
 
           // Add month labels
-          var today = moment().endOf('day');
-          var today_year_ago = moment().startOf('day').subtract(1, 'year');
+          var today = moment("2016-04-30", "YYYY-MM-DD").endOf('day');
+          var today_year_ago = moment("2016-05-01", "YYYY-MM-DD").startOf('day').subtract(1, 'year');
           var month_labels = d3.time.months(today_year_ago.startOf('month'), today);
           var monthScale = d3.scale.linear()
             .range([0, width])
@@ -357,24 +357,24 @@ angular.module('g1b.calendar-heatmap', []).
                 .ease('ease-in')
                 .style('opacity', 1);
             })
-            .on('click', function (d) {
-              if ( in_transition ) { return; }
-
-              in_transition = true;
-
-              // Set selected month to the one clicked on
-              scope.selected = {date: d};
-
-              // Hide tooltip
-              scope.hideTooltip();
-
-              // Remove all year overview related items and labels
-              scope.removeYearOverview();
-
-              // Redraw the chart
-              scope.overview = 'month';
-              scope.drawChart();
-            });
+            // .on('click', function (d) {
+            //   if ( in_transition ) { return; }
+            //
+            //   in_transition = true;
+            //
+            //   // Set selected month to the one clicked on
+            //   scope.selected = {date: d};
+            //
+            //   // Hide tooltip
+            //   scope.hideTooltip();
+            //
+            //   // Remove all year overview related items and labels
+            //   scope.removeYearOverview();
+            //
+            //   // Redraw the chart
+            //   scope.overview = 'month';
+            //   scope.drawChart();
+            // });
 
           // Add day labels
           var day_labels = d3.time.days(moment().startOf('week'), moment().endOf('week'));
@@ -487,27 +487,27 @@ angular.module('g1b.calendar-heatmap', []).
               return d.date;
             })
             .attr('offset', 0)
-            .on('click', function (d) {
-              if ( in_transition ) { return; }
-
-              // Don't transition if there is no data to show
-              if ( d.total === 0 ) { return; }
-
-              in_transition = true;
-
-              // Set selected date to the one clicked on
-              scope.selected = d;
-
-              // Hide tooltip
-              scope.hideTooltip();
-
-              // Remove all month overview related items and labels
-              scope.removeMonthOverview();
-
-              // Redraw the chart
-              scope.overview = 'day';
-              scope.drawChart();
-            });
+            // .on('click', function (d) {
+            //   if ( in_transition ) { return; }
+            //
+            //   // Don't transition if there is no data to show
+            //   if ( d.total === 0 ) { return; }
+            //
+            //   in_transition = true;
+            //
+            //   // Set selected date to the one clicked on
+            //   scope.selected = d;
+            //
+            //   // Hide tooltip
+            //   scope.hideTooltip();
+            //
+            //   // Remove all month overview related items and labels
+            //   scope.removeMonthOverview();
+            //
+            //   // Redraw the chart
+            //   scope.overview = 'day';
+            //   scope.drawChart();
+            // });
 
           var item_width = (width - label_padding) / week_labels.length - gutter * 5;
           var itemScale = d3.scale.linear()
@@ -637,24 +637,24 @@ angular.module('g1b.calendar-heatmap', []).
                 .ease('ease-in')
                 .style('opacity', 1);
             })
-            .on('click', function (d) {
-              if ( in_transition ) { return; }
-
-              in_transition = true;
-
-              // Set selected month to the one clicked on
-              scope.selected = {date: moment(scope.selected.date).week(d)};
-
-              // Hide tooltip
-              scope.hideTooltip();
-
-              // Remove all year overview related items and labels
-              scope.removeMonthOverview();
-
-              // Redraw the chart
-              scope.overview = 'week';
-              scope.drawChart();
-            });
+            // .on('click', function (d) {
+            //   if ( in_transition ) { return; }
+            //
+            //   in_transition = true;
+            //
+            //   // Set selected month to the one clicked on
+            //   scope.selected = {date: moment(scope.selected.date).week(d)};
+            //
+            //   // Hide tooltip
+            //   scope.hideTooltip();
+            //
+            //   // Remove all year overview related items and labels
+            //   scope.removeMonthOverview();
+            //
+            //   // Redraw the chart
+            //   scope.overview = 'week';
+            //   scope.drawChart();
+            // });
 
 
           // Add day labels
@@ -765,27 +765,27 @@ angular.module('g1b.calendar-heatmap', []).
               return d.date;
             })
             .attr('offset', 0)
-            .on('click', function (d) {
-              if ( in_transition ) { return; }
-
-              // Don't transition if there is no data to show
-              if ( d.total === 0 ) { return; }
-
-              in_transition = true;
-
-              // Set selected date to the one clicked on
-              scope.selected = d;
-
-              // Hide tooltip
-              scope.hideTooltip();
-
-              // Remove all week overview related items and labels
-              scope.removeWeekOverview();
-
-              // Redraw the chart
-              scope.overview = 'day';
-              scope.drawChart();
-            });
+            // .on('click', function (d) {
+            //   if ( in_transition ) { return; }
+            //
+            //   // Don't transition if there is no data to show
+            //   if ( d.total === 0 ) { return; }
+            //
+            //   in_transition = true;
+            //
+            //   // Set selected date to the one clicked on
+            //   scope.selected = d;
+            //
+            //   // Hide tooltip
+            //   scope.hideTooltip();
+            //
+            //   // Remove all week overview related items and labels
+            //   scope.removeWeekOverview();
+            //
+            //   // Redraw the chart
+            //   scope.overview = 'day';
+            //   scope.drawChart();
+            // });
 
           var item_width = (width - label_padding) / week_labels.length - gutter * 5;
           var itemScale = d3.scale.linear()
@@ -1040,11 +1040,11 @@ angular.module('g1b.calendar-heatmap', []).
               if ( in_transition ) { return; }
               scope.hideTooltip();
             })
-            .on('click', function (d) {
-              if ( scope.handler ) {
-                scope.handler(d);
-              }
-            })
+            // .on('click', function (d) {
+            //   if ( scope.handler ) {
+            //     scope.handler(d);
+            //   }
+            // })
             .transition()
               .delay(function () {
                 return (Math.cos(Math.PI * Math.random()) + 1) * transition_duration;
@@ -1180,26 +1180,26 @@ angular.module('g1b.calendar-heatmap', []).
           var button = buttons.append('g')
             .attr('class', 'button button-back')
             .style('opacity', 0)
-            .on('click', function () {
-              if ( in_transition ) { return; }
-
-              // Set transition boolean
-              in_transition = true;
-
-              // Clean the canvas from whichever overview type was on
-              if ( scope.overview === 'month' ) {
-                scope.removeMonthOverview();
-              } else if ( scope.overview === 'week' ) {
-                scope.removeWeekOverview();
-              } else if ( scope.overview === 'day' ) {
-                scope.removeDayOverview();
-              }
-
-              // Redraw the chart
-              scope.history.pop();
-              scope.overview = scope.history.pop();
-              scope.drawChart();
-            });
+            // .on('click', function () {
+            //   if ( in_transition ) { return; }
+            //
+            //   // Set transition boolean
+            //   in_transition = true;
+            //
+            //   // Clean the canvas from whichever overview type was on
+            //   if ( scope.overview === 'month' ) {
+            //     scope.removeMonthOverview();
+            //   } else if ( scope.overview === 'week' ) {
+            //     scope.removeWeekOverview();
+            //   } else if ( scope.overview === 'day' ) {
+            //     scope.removeDayOverview();
+            //   }
+            //
+            //   // Redraw the chart
+            //   scope.history.pop();
+            //   scope.overview = scope.history.pop();
+            //   scope.drawChart();
+            // });
           button.append('circle')
             .attr('cx', label_padding / 2)
             .attr('cy', label_padding / 2.5)
