@@ -4,7 +4,14 @@ app.controller("mainController", function($scope, $http) {
     var d = moment("2016-04-30", "YYYY-MM-DD");
     var yearAgo = moment(d).add(-1, 'years');
     //console.log(d.add(1,'days'));
-    $scope.salesData = [];
+    $scope.item = '';
+    $scope.itemsOptions = [];
+    $http.get('json/itemsOptions.json')
+        .then(function(items) {
+          $scope.itemsOptions = items.data;
+      });
+
+
     $http.get('json/salesYear.json')
         .then(function(res) {
             //$scope.salesOrders = res.data;
@@ -97,5 +104,33 @@ app.controller("mainController", function($scope, $http) {
     //console.log($scope.exampleData);
 
 
+  $scope.getFilteredData = function() {
+    $scope.salesFilteredData =[];
+    $http.get('json/salesYear.json')
+        .then(function(res) {
+          //console.log(res.data);
+          var arrLentgh=res.data.length;
+          for(var i=0; i<arrLentgh;i++){
+            var tempObject={
+              date: res.data[i].date,
+              total: 0,
+              details: []
+            };
+            var arr2Length=res.data[i].details.length;
+            for(var z=0; z<arr2Length; z++){
+              if(res.data[i].details[z].name===$scope.item.item_number){
+                tempObject.total+=res.data[i].details[z].value;
+                tempObject.details.push(res.data[i].details[z]);
+
+
+            }
+            $scope.salesFilteredData.push(tempObject);
+           }
+        }
+        console.log($scope.salesFilteredData);
+    $scope.item='';
+          $scope.data =$scope.salesFilteredData;
+      });
+    }
     //////////////////
 });

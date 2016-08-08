@@ -17,6 +17,12 @@
   <body ng-controller="mainController">
     <div class="">
       <calendar-heatmap data="data" color="'#ff0000'" overview="'year'"></calendar-heatmap>
+    </br></br>
+      <label for=""> Filter by item: </label>
+      <select class="form-control" ng-model="item" ng-options="item as item.item_number for item in itemsOptions">
+            <option value="">-Choose-</option>
+       </select>
+       <button ng-click="getFilteredData()" class="btn btn-primary" ng-model="applyFilterBtn" ng-disabled="item === ''"><span class="fa fa-plus-circle fa-lg"></span> Apply Filter </button>
     </div>
 
 <div class="">
