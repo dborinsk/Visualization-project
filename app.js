@@ -5,6 +5,7 @@ app.controller("mainController", function($scope, $http) {
     var yearAgo = moment(d).add(-1, 'years');
     //console.log(d.add(1,'days'));
     $scope.item = '';
+    $scope.btnDisabled = false;
     $scope.itemsOptions = [];
     $http.get('json/itemsOptions.json')
         .then(function(items) {
@@ -127,10 +128,20 @@ app.controller("mainController", function($scope, $http) {
             $scope.salesFilteredData.push(tempObject);
            }
         }
-        console.log($scope.salesFilteredData);
-    $scope.item='';
-          $scope.data =$scope.salesFilteredData;
+        //console.log($scope.salesFilteredData);
+        $scope.item='';
+        $scope.data =$scope.salesFilteredData;
       });
     }
+
+    $scope.removeFilteredData = function() {
+
+      $http.get('json/salesYear.json')
+          .then(function(res) {
+      $scope.item='';
+      $scope.btnDisabled = false;
+      $scope.data = res.data;
+  });
+      }
     //////////////////
 });
