@@ -129,7 +129,6 @@ app.controller("mainController", function($scope, $http) {
            }
         }
         //console.log($scope.salesFilteredData);
-        $scope.item='';
         $scope.data =$scope.salesFilteredData;
       });
     }
