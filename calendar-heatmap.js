@@ -188,8 +188,7 @@ directive('calendarHeatmap', ['$window', function($window) {
                         }
                         return ((total_item / d.total) * 100) * 0.10;
                     }
-                    //#7b9b12
-                    //transparent
+
                 items.selectAll('.item-circle').remove();
                 items.selectAll('.item-circle')
                     .data(scope.data)
@@ -228,10 +227,10 @@ directive('calendarHeatmap', ['$window', function($window) {
                         else if (scope.sitem !== undefined && d.total === 0)
                             return 'transparent';
                         else if (scope.sitem !== undefined && d.total === scope.total_item && d.details[0].name === scope.sitem) {
-                          console.log('1');
+                          //onsole.log('1');
                             return color2(d.total);
                         } else if (scope.sitem !== undefined && d.total > scope.total_item) {
-                          console.log(scope.total_item);
+                          //console.log(scope.total_item);
                             return color(d.total);
                         }
 
@@ -303,11 +302,15 @@ directive('calendarHeatmap', ['$window', function($window) {
                         tooltip_html += '<div>on ' + moment(d.date).format('dddd, MMM Do YYYY') + '</div><br>';
 
                         // Add summary to the tooltip
+                        scope.numOfItems= 0;
+                        tooltip_html += '<div><strong><span>Item</span><span>Quantity</span></strong>';
                         angular.forEach(d.summary, function(d) {
-                            tooltip_html += '<div><span><strong>' + d.name + '</strong></span>';
+                            scope.numOfItems++;
+                            tooltip_html += '<div><span>' + d.name + '</span>';
                             //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
                             tooltip_html += '<span>' + d.value + '</span></div>';
                         });
+                        tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
 
                         // Calculate tooltip position
                         var x = calcItemX(d) + item_size;
@@ -628,7 +631,7 @@ directive('calendarHeatmap', ['$window', function($window) {
                         var tooltip_html = '';
                         tooltip_html += '<div class="header"><strong>' + d.name + '</strong></div><br>';
                         //tooltip_html += '<div><strong>' + (d.value ? scope.formatTime(d.value) : 'No time') + ' tracked</strong></div>';
-                        tooltip_html += '<div><strong>' + (d.value ? d.value : 'No time') + ' tracked</strong></div>';
+                        //tooltip_html += '<div><strong>' + (d.value ? d.value : 'No time') + ' tracked</strong></div>';
                         tooltip_html += '<div>on ' + moment(date).format('dddd, MMM Do YYYY') + '</div>';
 
                         // Calculate tooltip position

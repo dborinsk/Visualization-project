@@ -27,7 +27,7 @@
   </head>
   <body ng-controller="mainController">
     <div class="">
-      <calendar-heatmap data="data" color="'#ff0000'" overview="'year'" sitem="selectedForStroke.item_number"></calendar-heatmap>
+      <calendar-heatmap data="data" color="'#ff0000'" overview="'year'" sitem="selectedForStroke.item_number" ></calendar-heatmap>
     <div style="padding: 50px 30px 50px 20px;">
         <div class="col-md-8">
             <div class="form-group">
@@ -47,7 +47,7 @@
               </select>
             </div>
             <div class="form-group">
-              <button ng-click="itemsCompare(); btnDisabled=true " class="btn btn-primary btn-xs" ng-model="applyFilterBtn"> Apply Filter </button>
+              <button ng-click="itemsCompare(); btnDisabled=true " class="btn btn-primary btn-xs" ng-model="applyFilterBtn" ng-disabled="cmprItem1===null || cmprItem2===null"> Apply Filter </button>
             </div>
             <div class="form-group">
               <button ng-click="removeFilteredData()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled"> Remove Filter </button>
