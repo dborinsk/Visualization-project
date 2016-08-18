@@ -5,12 +5,15 @@ app.controller("mainController", function($scope, $http) {
     var yearAgo = moment(d).add(-1, 'years');
     //console.log(d.add(1,'days'));
     $scope.item = '';
+    $scope.cmprItem1 = '';
+    $scope.cmprItem2 = '';
+    $scope.selectedForStroke = '';
     $scope.btnDisabled = false;
     $scope.itemsOptions = [];
     $http.get('json/itemsOptions.json')
         .then(function(items) {
-          $scope.itemsOptions = items.data;
-      });
+            $scope.itemsOptions = items.data;
+        });
 
 
     $http.get('json/salesYear.json')
@@ -104,43 +107,69 @@ app.controller("mainController", function($scope, $http) {
     // };
     //console.log($scope.exampleData);
 
+    $scope.itemsCompare = function() {
+      $scope.salesFilteredData = [];
+      $http.get('json/salesYear.json')
+          .then(function(res) {
+              //console.log(res.data);
+              var arrLentgh = res.data.length;
+              for (var i = 0; i < arrLentgh; i++) {
+                  var tempObject = {
+                      date: res.data[i].date,
+                      total: 0,
+                      details: []
+                  };
+                  var arr2Length = res.data[i].details.length;
+                  for (var z = 0; z < arr2Length; z++) {
+                      if (res.data[i].details[z].name === $scope.cmprItem1.item_number || res.data[i].details[z].name === $scope.cmprItem2.item_number) {
+                          tempObject.total += res.data[i].details[z].value;
+                          tempObject.details.push(res.data[i].details[z]);
+                      }
+                      $scope.salesFilteredData.push(tempObject);
+                  }
+              }
+              //console.log($scope.salesFilteredData);
+              $scope.data = $scope.salesFilteredData;
+              $scope.selectedForStroke = $scope.cmprItem2;
+          });
+    }
 
-  $scope.getFilteredData = function() {
-    $scope.salesFilteredData =[];
-    $http.get('json/salesYear.json')
-        .then(function(res) {
-          //console.log(res.data);
-          var arrLentgh=res.data.length;
-          for(var i=0; i<arrLentgh;i++){
-            var tempObject={
-              date: res.data[i].date,
-              total: 0,
-              details: []
-            };
-            var arr2Length=res.data[i].details.length;
-            for(var z=0; z<arr2Length; z++){
-              if(res.data[i].details[z].name===$scope.item.item_number){
-                tempObject.total+=res.data[i].details[z].value;
-                tempObject.details.push(res.data[i].details[z]);
+    $scope.getFilteredData = function() {
+        $scope.salesFilteredData = [];
+        $http.get('json/salesYear.json')
+            .then(function(res) {
+                //console.log(res.data);
+                var arrLentgh = res.data.length;
+                for (var i = 0; i < arrLentgh; i++) {
+                    var tempObject = {
+                        date: res.data[i].date,
+                        total: 0,
+                        details: []
+                    };
+                    var arr2Length = res.data[i].details.length;
+                    for (var z = 0; z < arr2Length; z++) {
+                        if (res.data[i].details[z].name === $scope.item.item_number) {
+                            tempObject.total += res.data[i].details[z].value;
+                            tempObject.details.push(res.data[i].details[z]);
 
 
-            }
-            $scope.salesFilteredData.push(tempObject);
-           }
-        }
-        //console.log($scope.salesFilteredData);
-        $scope.data =$scope.salesFilteredData;
-      });
+                        }
+                        $scope.salesFilteredData.push(tempObject);
+                    }
+                }
+                //console.log($scope.salesFilteredData);
+                $scope.data = $scope.salesFilteredData;
+            });
     }
 
     $scope.removeFilteredData = function() {
 
-      $http.get('json/salesYear.json')
-          .then(function(res) {
-      $scope.item='';
-      $scope.btnDisabled = false;
-      $scope.data = res.data;
-  });
-      }
-    //////////////////
+            $http.get('json/salesYear.json')
+                .then(function(res) {
+                    $scope.item = '';
+                    $scope.btnDisabled = false;
+                    $scope.data = res.data;
+                });
+        }
+        //////////////////
 });

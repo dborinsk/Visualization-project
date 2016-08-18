@@ -27,18 +27,27 @@
   </head>
   <body ng-controller="mainController">
     <div class="">
-      <calendar-heatmap data="data" color="'#ff0000'" overview="'year'"></calendar-heatmap>
-    </br></br>
+      <calendar-heatmap data="data" color="'#ff0000'" overview="'year'" sitem="selectedForStroke.item_number"></calendar-heatmap>
     <div style="padding: 50px 30px 50px 20px;">
-        <div class="col-md-4">
+        <div class="col-md-8">
             <div class="form-group">
-              <label for=""> Filter by item: </label>
-              <select class="" ng-model="item" ng-options="item as item.item_number for item in itemsOptions">
+              <label for=""> Select Item: </label>
+              <select class="" ng-model="selectedForStroke" ng-options="item as item.item_number for item in itemsOptions">
+                <option value="">-Choose-</option>
+              </select>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for=""> Select Items for comparison: </label>
+              <select class="" ng-model="cmprItem1" ng-options="item as item.item_number for item in itemsOptions">
+                <option value="">-Choose-</option>
+              </select>
+              <select class="" ng-model="cmprItem2" ng-options="item as item.item_number for item in itemsOptions">
                 <option value="">-Choose-</option>
               </select>
             </div>
             <div class="form-group">
-              <button ng-click="getFilteredData(); btnDisabled=true " class="btn btn-primary btn-xs" ng-model="applyFilterBtn" ng-disabled="item === '' || item === null"> Apply Filter </button>
+              <button ng-click="itemsCompare(); btnDisabled=true " class="btn btn-primary btn-xs" ng-model="applyFilterBtn"> Apply Filter </button>
             </div>
             <div class="form-group">
               <button ng-click="removeFilteredData()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled"> Remove Filter </button>
