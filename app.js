@@ -10,10 +10,36 @@ app.controller("mainController", function($scope, $http) {
     $scope.selectedForStroke = '';
     $scope.btnDisabled = false;
     $scope.itemsOptions = [];
-    $http.get('json/itemsOptions.json')
+    $http.get('json/itemsFile.json')
         .then(function(items) {
             $scope.itemsOptions = items.data;
         });
+
+//         $http.get('json/itemsExtended.json')
+//             .then(function(itemsExenteded) {
+//               $http.get('json/itemsFile.json')
+//                   .then(function(items) {
+//                     //console.log(JSON.stringify(itemsExenteded.data));
+//                       $scope.itemsExenteded = [];
+//                       $scope.itemsExenteded = itemsExenteded.data;
+//                       $scope.itemsOptionsNew = [];
+//                         $scope.itemsOptions = items.data;
+//                       for (var i=0; i<$scope.itemsExenteded.length; i++){
+// console.log($scope.itemsOptionsNew.indexOf($scope.itemsExenteded[i].item_number));
+//                           if ($scope.itemsOptionsNew.indexOf($scope.itemsExenteded[i].item_number) !== -1) {
+//
+//                             $scope.itemsOptionsNew[indexOf($scope.itemsExenteded[i].item_number)].push({"price" : $scope.itemsExenteded[i].updated_supplier_price});
+//                             console.log($scope.itemsOptionsNew[indexOf(itemsExenteded.data[i].item_number)]);
+//
+//                         }
+//                       }
+//                       //console.log($scope.itemsOptionsNew);
+//                       console.log("User = " + JSON.stringify($scope.itemsOptionsNew));
+//
+//                     });
+//                   });
+
+
 
 
     $http.get('json/salesYear.json')
@@ -75,8 +101,8 @@ app.controller("mainController", function($scope, $http) {
             //     //$scope.itemsOptionsNew.push(res.data[i].details[j].name);
             //   }
             // }
-            // console.log($scope.itemsOptionsNew);
-
+            // //console.log($scope.itemsOptionsNew);
+            // console.log("User = " + JSON.stringify($scope.itemsOptionsNew));
 
 
         });
