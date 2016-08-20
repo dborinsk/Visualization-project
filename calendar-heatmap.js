@@ -303,14 +303,18 @@ directive('calendarHeatmap', ['$window', function($window) {
 
                         // Add summary to the tooltip
                         scope.numOfItems= 0;
-                        tooltip_html += '<div><strong><span>Item</span><span>Quantity</span></strong>';
+                        scope.sumOfItemsCost= 0;
+                        tooltip_html += '<div><strong><span>Item</span><span>Quantity</span><span>Price</span></strong>';
                         angular.forEach(d.summary, function(d) {
                             scope.numOfItems++;
+                            scope.sumOfItemsCost+= d.value;
                             tooltip_html += '<div><span>' + d.name + '</span>';
                             //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
+                            tooltip_html += '<span>' + d.value + '</span>';
                             tooltip_html += '<span>' + d.value + '</span></div>';
                         });
                         tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
+                        tooltip_html += '<div class="header"><strong>' + (scope.sumOfItemsCost) + ' ILS</strong></div>';
 
                         // Calculate tooltip position
                         var x = calcItemX(d) + item_size;

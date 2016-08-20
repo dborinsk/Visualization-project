@@ -64,6 +64,21 @@ app.controller("mainController", function($scope, $http) {
             // }
             // console.log(JSON.stringify($scope.data));
             $scope.data = res.data;
+
+            // $scope.itemsOptionsNew = [];
+            // for (var i=0; i<res.data.length; i++){
+            //   for(var j=0; j<res.data[i].details.length ; j++){
+            //     if ($scope.itemsOptionsNew.indexOf(res.data[i].details[j].name) == -1) {
+            //       $scope.itemsOptionsNew.push({"item_number":res.data[i].details[j].name});
+            //
+            //     }
+            //     //$scope.itemsOptionsNew.push(res.data[i].details[j].name);
+            //   }
+            // }
+            // console.log($scope.itemsOptionsNew);
+
+
+
         });
 
     // $http.get('json/purchaseOrders.json')
