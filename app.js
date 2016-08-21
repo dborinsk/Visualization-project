@@ -4,16 +4,18 @@ app.controller("mainController", function($scope, $http) {
     var d = moment("2016-04-30", "YYYY-MM-DD");
     var yearAgo = moment(d).add(-1, 'years');
     //console.log(d.add(1,'days'));
-    $scope.item = '';
-    $scope.cmprItem1 = '';
-    $scope.cmprItem2 = '';
-    $scope.selectedForStroke = '';
+    $scope.item = null;
+    $scope.selectedForStroke = null;
+    $scope.cmprItem1= null;
+    $scope.cmprItem2= null;
     $scope.btnDisabled = false;
     $scope.itemsOptions = [];
     $http.get('json/itemsFile.json')
         .then(function(items) {
             $scope.itemsOptions = items.data;
         });
+
+
 
 //         $http.get('json/itemsExtended.json')
 //             .then(function(itemsExenteded) {
@@ -42,7 +44,7 @@ app.controller("mainController", function($scope, $http) {
 
 
 
-    $http.get('json/salesYear.json')
+    $http.get('json/salesYearWithPrice.json')
         .then(function(res) {
             //$scope.salesOrders = res.data;
             // for(var i=0;i<res.data.length;i++) {
@@ -88,28 +90,34 @@ app.controller("mainController", function($scope, $http) {
             //     }
             //     $scope.data.push(obj);
             // }
-            // console.log(JSON.stringify($scope.data));
+            //  console.log(JSON.stringify($scope.data));
             $scope.data = res.data;
-
-            // $scope.itemsOptionsNew = [];
-            // for (var i=0; i<res.data.length; i++){
-            //   for(var j=0; j<res.data[i].details.length ; j++){
-            //     if ($scope.itemsOptionsNew.indexOf(res.data[i].details[j].name) == -1) {
-            //       $scope.itemsOptionsNew.push({"item_number":res.data[i].details[j].name});
+            //console.log(JSON.stringify($scope.data));
+            // $scope.temp = [];
+            // $scope.temp = res.data;
+            // //console.log($scope.temp);
+            // for(var i=0; i<$scope.temp.length; i++){
             //
+            //   for(var j=0; j<$scope.temp[i].details.length ; j++){
+            //     for(var z=0; z<$scope.itemsOptions.length; z++){
+            //       if($scope.itemsOptions[z].item_number != undefined){
+            //       //  console.log($scope.itemsOptions[z].item_number == undefined);
+            //       if ($scope.temp[i].details[j].name ===  $scope.itemsOptions[z].item_number) {
+            //         $scope.temp[i].details[j].price = $scope.itemsOptions[z].item_unit_price;
+            //       //  console.log($scope.temp[i].details[j].name ==  $scope.itemsOptions[z].item_number);
+            //       }
+            //     }
             //     }
             //     //$scope.itemsOptionsNew.push(res.data[i].details[j].name);
             //   }
             // }
             // //console.log($scope.itemsOptionsNew);
-            // console.log("User = " + JSON.stringify($scope.itemsOptionsNew));
-
-
+            // console.log("User = " + JSON.stringify($scope.temp));
         });
 
     // $http.get('json/purchaseOrders.json')
     //     .then(function(res) {
-    //         $scope.prchsOrders = res.data;
+    //         $scope.prchsOrders = $scope.data;
     //     });
 
     // Initialize random data for the demo
@@ -150,7 +158,7 @@ app.controller("mainController", function($scope, $http) {
 
     $scope.itemsCompare = function() {
       $scope.salesFilteredData = [];
-      $http.get('json/salesYear.json')
+      $http.get('json/salesYearWithPrice.json')
           .then(function(res) {
               //console.log(res.data);
               var arrLentgh = res.data.length;
@@ -205,7 +213,7 @@ app.controller("mainController", function($scope, $http) {
 
     $scope.removeFilteredData = function() {
 
-            $http.get('json/salesYear.json')
+            $http.get('json/salesYearWithPrice.json')
                 .then(function(res) {
                     $scope.item = null;
                     $scope.selectedForStroke = null;

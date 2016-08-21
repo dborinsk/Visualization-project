@@ -94,7 +94,8 @@ directive('calendarHeatmap', ['$window', function($window) {
                         var summary = d.details.reduce(function(uniques, project) {
                             if (!uniques[project.name]) {
                                 uniques[project.name] = {
-                                    'value': project.value
+                                    'value': project.value,
+                                    'price': project.price
                                 };
                             } else {
                                 uniques[project.name].value += project.value;
@@ -104,7 +105,8 @@ directive('calendarHeatmap', ['$window', function($window) {
                         var unsorted_summary = Object.keys(summary).map(function(key) {
                             return {
                                 'name': key,
-                                'value': summary[key].value
+                                'value': summary[key].value,
+                                'price' : summary[key].price
                             };
                         });
                         d.summary = unsorted_summary.sort(function(a, b) {
@@ -307,12 +309,13 @@ directive('calendarHeatmap', ['$window', function($window) {
                         tooltip_html += '<div><strong><span>Item</span><span>Quantity</span><span>Price</span></strong>';
                         angular.forEach(d.summary, function(d) {
                             scope.numOfItems++;
-                            scope.sumOfItemsCost+= d.value;
+                            scope.sumOfItemsCost+= (d.price)*d.value;
                             tooltip_html += '<div><span>' + d.name + '</span>';
                             //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
                             tooltip_html += '<span>' + d.value + '</span>';
-                            tooltip_html += '<span>' + d.value + '</span></div>';
+                            tooltip_html += '<span>' + d.price + '</span></div>';
                         });
+                        scope.sumOfItemsCost=Math.round(scope.sumOfItemsCost * 100) / 100;
                         tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
                         tooltip_html += '<div class="header"><strong>' + (scope.sumOfItemsCost) + ' ILS</strong></div>';
 
