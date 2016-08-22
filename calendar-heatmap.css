@@ -27,8 +27,8 @@
   pointer-events: none;
   position: absolute;
   z-index: 9999;
-  width: 250px;
-  max-width: 250px;
+  width: 350px;
+  max-width: 350px;
   overflow: hidden;
   padding: 15px;
   font-size: 12px;
@@ -39,11 +39,11 @@
 }
 .calendar-heatmap .heatmap-tooltip .header strong {
   display: inline-block;
-  width: 250px;
+  width: 350px;
 }
 .calendar-heatmap .heatmap-tooltip span {
   display: inline-block;
-  width: 30%;
+  width: 20%;
   padding-right: 10px;
   box-sizing: border-box;
 }

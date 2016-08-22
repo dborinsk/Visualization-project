@@ -31,7 +31,7 @@ directive('calendarHeatmap', ['$window', function($window) {
             var in_transition = false;
 
             // Tooltip defaults
-            var tooltip_width = 250;
+            var tooltip_width = 350;
             var tooltip_padding = 15;
 
             // Initialize current overview type and history
@@ -325,24 +325,37 @@ directive('calendarHeatmap', ['$window', function($window) {
                         // Construct tooltip
                         var tooltip_html = '';
                         //tooltip_html += '<div class="header"><strong>' + (d.total ? scope.formatTime(d.total) : 'No time') + ' tracked</strong></div>';
-                        tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No ') + ' units</strong></div>';
+                        scope.stype==='general' ? tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No ') + ' units</strong></div>' : tooltip_html += '<div class="header"><strong>' + (d.total ? (Math.round(d.total * 100) / 100 ) : '0 ') + ' ILS</strong></div>';
                         tooltip_html += '<div>on ' + moment(d.date).format('dddd, MMM Do YYYY') + '</div><br>';
 
                         // Add summary to the tooltip
                         scope.numOfItems = 0;
                         scope.sumOfItemsCost = 0;
-                        tooltip_html += '<div><strong><span>Item</span><span>Quantity</span><span>Price</span></strong>';
+                        tooltip_html += '<div><strong><span>Item</span><span>Quantity</span><span>Price</span><span>Cost</span></strong>';
                         angular.forEach(d.summary, function(d) {
                             scope.numOfItems++;
                             scope.sumOfItemsCost += (d.price) * d.value;
-                            tooltip_html += '<div><span>' + d.name + '</span>';
-                            //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
-                            tooltip_html += '<span>' + d.value + '</span>';
-                            tooltip_html += '<span>' + d.price + '</span></div>';
+                            if(d.name===scope.sitem) {
+                              tooltip_html += '<div style="color:#3b5998"><strong><span>' + d.name + '</span>';
+                              //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
+                              tooltip_html += '<span>' + d.value + '</span>';
+                              tooltip_html += '<span>' + d.price + '</span>';
+                              tooltip_html += '<span>' + Math.round(d.price*d.value * 100) / 100 + '</span></strong></div>';
+                            } else {
+                              tooltip_html += '<div><span>' + d.name + '</span>';
+                              //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
+                              tooltip_html += '<span>' + d.value + '</span>';
+                              tooltip_html += '<span>' + d.price + '</span>';
+                              tooltip_html += '<span>' + Math.round(d.price*d.value * 100) / 100 + '</span></div>';
+                            }
+
                         });
                         scope.sumOfItemsCost = Math.round(scope.sumOfItemsCost * 100) / 100;
-                        tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
-                        tooltip_html += '<div class="header"><strong>' + (scope.sumOfItemsCost) + ' ILS</strong></div>';
+                        if(scope.stype==='general') {
+                          tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
+                          tooltip_html += '<div class="header"><strong>' + (scope.sumOfItemsCost) + ' ILS</strong></div>';
+                        }
+
 
                         // Calculate tooltip position
                         var x = calcItemX(d) + item_size;
