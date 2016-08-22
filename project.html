@@ -55,7 +55,7 @@
                                             Select Item:
                                         </label>
                                         <!-- <select class="" ng-model="selectedForStroke" ng-options="item as item.item_number for item in itemsOptions"> -->
-                                        <select class="choiceBox" style="color:#3b5998" ng-model="selectedForStroke" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
+                                        <select class="form-control" style="color:#3b5998" ng-model="selectedForStroke" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
                                             <option value="">-Choose-</option>
                                         </select>
                                     </div>
@@ -68,13 +68,14 @@
                                         <label for="">
                                             Select Items for comparison:
                                         </label>
-                                        <select class="choiceBox" style="color:#ff4500" ng-model="cmprItem1" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
+                                        <select class="form-control" style="color:#ff4500" ng-model="cmprItem1" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
                                             <option value="">-Choose-</option>
                                         </select>
-                                        <select class="choiceBox" style="color:#3b5998" ng-model="cmprItem2" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
+                                        <br>
+                                        <select class="form-control" style="color:#3b5998" ng-model="cmprItem2" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
                                             <option value="">-Choose-</option>
                                         </select>
-
+                                        <br>
                                         <div class="form-group">
                                             <button ng-click="itemsCompare(); btnDisabled=true " class="btn btn-primary btn-xs" ng-model="applyFilterBtn" ng-disabled="cmprItem1===null || cmprItem2===null">
                                                 Apply Filter
