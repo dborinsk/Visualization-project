@@ -6,10 +6,11 @@ app.controller("mainController", function($scope, $http) {
     //console.log(d.add(1,'days'));
     $scope.item = null;
     $scope.selectedForStroke = null;
-    $scope.cmprItem1= null;
-    $scope.cmprItem2= null;
+    $scope.cmprItem1 = null;
+    $scope.cmprItem2 = null;
     $scope.btnDisabled = false;
     $scope.itemsOptions = [];
+    $scope.stroke_type = 'general';
     $http.get('json/itemsFile.json')
         .then(function(items) {
             $scope.itemsOptions = items.data;
@@ -17,35 +18,43 @@ app.controller("mainController", function($scope, $http) {
 
 
 
-//         $http.get('json/itemsExtended.json')
-//             .then(function(itemsExenteded) {
-//               $http.get('json/itemsFile.json')
-//                   .then(function(items) {
-//                     //console.log(JSON.stringify(itemsExenteded.data));
-//                       $scope.itemsExenteded = [];
-//                       $scope.itemsExenteded = itemsExenteded.data;
-//                       $scope.itemsOptionsNew = [];
-//                         $scope.itemsOptions = items.data;
-//                       for (var i=0; i<$scope.itemsExenteded.length; i++){
-// console.log($scope.itemsOptionsNew.indexOf($scope.itemsExenteded[i].item_number));
-//                           if ($scope.itemsOptionsNew.indexOf($scope.itemsExenteded[i].item_number) !== -1) {
-//
-//                             $scope.itemsOptionsNew[indexOf($scope.itemsExenteded[i].item_number)].push({"price" : $scope.itemsExenteded[i].updated_supplier_price});
-//                             console.log($scope.itemsOptionsNew[indexOf(itemsExenteded.data[i].item_number)]);
-//
-//                         }
-//                       }
-//                       //console.log($scope.itemsOptionsNew);
-//                       console.log("User = " + JSON.stringify($scope.itemsOptionsNew));
-//
-//                     });
-//                   });
+    //         $http.get('json/itemsExtended.json')
+    //             .then(function(itemsExenteded) {
+    //               $http.get('json/itemsFile.json')
+    //                   .then(function(items) {
+    //                     //console.log(JSON.stringify(itemsExenteded.data));
+    //                       $scope.itemsExenteded = [];
+    //                       $scope.itemsExenteded = itemsExenteded.data;
+    //                       $scope.itemsOptionsNew = [];
+    //                         $scope.itemsOptions = items.data;
+    //                       for (var i=0; i<$scope.itemsExenteded.length; i++){
+    // console.log($scope.itemsOptionsNew.indexOf($scope.itemsExenteded[i].item_number));
+    //                           if ($scope.itemsOptionsNew.indexOf($scope.itemsExenteded[i].item_number) !== -1) {
+    //
+    //                             $scope.itemsOptionsNew[indexOf($scope.itemsExenteded[i].item_number)].push({"price" : $scope.itemsExenteded[i].updated_supplier_price});
+    //                             console.log($scope.itemsOptionsNew[indexOf(itemsExenteded.data[i].item_number)]);
+    //
+    //                         }
+    //                       }
+    //                       //console.log($scope.itemsOptionsNew);
+    //                       console.log("User = " + JSON.stringify($scope.itemsOptionsNew));
+    //
+    //                     });
+    //                   });
 
 
 
 
-    $http.get('json/salesYearWithPrice.json')
+    $http.get('json/sales_with_prices.json')
         .then(function(res) {
+            // for (var i = 0; i < res.data.length; i++) {
+            //     var totalSales = 0;
+            //     for (var j = 0; j < res.data[i].details.length; j++) {
+            //         totalSales += (res.data[i].details[j].value * res.data[i].details[j].price);
+            //     }
+            //     res.data[i]['total_sales'] = totalSales;
+            // }
+            // console.log(JSON.stringify(res.data));
             //$scope.salesOrders = res.data;
             // for(var i=0;i<res.data.length;i++) {
             //   for(startDate=yearAgo; startDate<=d; startDate.add(1,'days') ){
@@ -155,32 +164,101 @@ app.controller("mainController", function($scope, $http) {
     //   console.log(val);
     // };
     //console.log($scope.exampleData);
+    $scope.GeneralCompare = function() {
+        console.log('GeneralCompare has being called');
+        $scope.stroke_type = 'general';
+        $scope.salesFilteredData = [];
+        $http.get('json/sales_with_prices.json')
+            .then(function(res) {
+                //console.log(res.data);
+                $scope.data = res.data;
+                //$scope.selectedForStroke = $scope.cmprItem2;
+            });
+    }
+
+    $scope.GeneralCompareByPrice = function() {
+        console.log('GeneralCompareByPrice has being called');
+        $scope.stroke_type = 'price';
+        $scope.salesFilteredData = [];
+        $http.get('json/sales_with_prices.json')
+            .then(function(res) {
+                //console.log(res.data);
+                var arrLentgh = res.data.length;
+                for (var i = 0; i < arrLentgh; i++) {
+                    var tempObject = {
+                        date: res.data[i].date,
+                        total: 0,
+                        details: []
+                    };
+                    var arr2Length = res.data[i].details.length;
+                    for (var z = 0; z < arr2Length; z++) {
+                        tempObject.total += (res.data[i].details[z].value*res.data[i].details[z].price);
+                        tempObject.details.push(res.data[i].details[z]);
+                        $scope.salesFilteredData.push(tempObject);
+                    }
+                }
+                //console.log($scope.salesFilteredData);
+                $scope.data = $scope.salesFilteredData;
+            });
+    }
+
 
     $scope.itemsCompare = function() {
-      $scope.salesFilteredData = [];
-      $http.get('json/salesYearWithPrice.json')
-          .then(function(res) {
-              //console.log(res.data);
-              var arrLentgh = res.data.length;
-              for (var i = 0; i < arrLentgh; i++) {
-                  var tempObject = {
-                      date: res.data[i].date,
-                      total: 0,
-                      details: []
-                  };
-                  var arr2Length = res.data[i].details.length;
-                  for (var z = 0; z < arr2Length; z++) {
-                      if (res.data[i].details[z].name === $scope.cmprItem1.item_number || res.data[i].details[z].name === $scope.cmprItem2.item_number) {
-                          tempObject.total += res.data[i].details[z].value;
-                          tempObject.details.push(res.data[i].details[z]);
-                      }
-                      $scope.salesFilteredData.push(tempObject);
-                  }
-              }
-              //console.log($scope.salesFilteredData);
-              $scope.data = $scope.salesFilteredData;
-              $scope.selectedForStroke = $scope.cmprItem2;
-          });
+        console.log('itemsCompare has being called');
+        $scope.stroke_type = 'general';
+        $scope.salesFilteredData = [];
+        $http.get('json/sales_with_prices.json')
+            .then(function(res) {
+                //console.log(res.data);
+                var arrLentgh = res.data.length;
+                for (var i = 0; i < arrLentgh; i++) {
+                    var tempObject = {
+                        date: res.data[i].date,
+                        total: 0,
+                        details: []
+                    };
+                    var arr2Length = res.data[i].details.length;
+                    for (var z = 0; z < arr2Length; z++) {
+                        if (res.data[i].details[z].name === $scope.cmprItem1.item_number || res.data[i].details[z].name === $scope.cmprItem2.item_number) {
+                            tempObject.total += res.data[i].details[z].value;
+                            tempObject.details.push(res.data[i].details[z]);
+                        }
+                        $scope.salesFilteredData.push(tempObject);
+                    }
+                }
+                //console.log($scope.salesFilteredData);
+                $scope.data = $scope.salesFilteredData;
+                $scope.selectedForStroke = $scope.cmprItem2;
+            });
+    }
+
+    $scope.itemsCompareByPrice = function() {
+        console.log('itemsCompareByPrice has being called');
+        $scope.stroke_type = 'price';
+        $scope.salesFilteredData = [];
+        $http.get('json/sales_with_prices.json')
+            .then(function(res) {
+                //console.log(res.data);
+                var arrLentgh = res.data.length;
+                for (var i = 0; i < arrLentgh; i++) {
+                    var tempObject = {
+                        date: res.data[i].date,
+                        total_sales: res.data[i].total_sales,
+                        total: 0,
+                        details: []
+                    };
+                    var arr2Length = res.data[i].details.length;
+                    for (var z = 0; z < arr2Length; z++) {
+                        if (res.data[i].details[z].name === $scope.cmprItem1.item_number || res.data[i].details[z].name === $scope.cmprItem2.item_number) {
+                            tempObject.total += (res.data[i].details[z].value * res.data[i].details[z].price);
+                            tempObject.details.push(res.data[i].details[z]);
+                        }
+                        $scope.salesFilteredData.push(tempObject);
+                    }
+                }
+                $scope.data = $scope.salesFilteredData;
+                $scope.selectedForStroke = $scope.cmprItem2;
+            });
     }
 
     // $scope.getFilteredData = function() {
@@ -213,12 +291,12 @@ app.controller("mainController", function($scope, $http) {
 
     $scope.removeFilteredData = function() {
 
-            $http.get('json/salesYearWithPrice.json')
+            $http.get('json/sales_with_prices.json')
                 .then(function(res) {
                     $scope.item = null;
                     $scope.selectedForStroke = null;
-                    $scope.cmprItem1= null;
-                    $scope.cmprItem2= null;
+                    $scope.cmprItem1 = null;
+                    $scope.cmprItem2 = null;
                     $scope.btnDisabled = false;
                     $scope.data = res.data;
                 });
