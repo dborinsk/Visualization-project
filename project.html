@@ -10,7 +10,6 @@
                 width: 83px;
                 /*width: 20%;*/
             }
-
         </style>
         <meta charset="utf-8">
         <link rel="stylesheet" href="nv.d3.min.css"/>
@@ -33,16 +32,22 @@
     </head>
     <body ng-controller="mainController">
         <div class="">
-            <calendar-heatmap data="data" color="'#ff0000'" overview="'year'" sitem="selectedForStroke.item_number"></calendar-heatmap>
+            <calendar-heatmap data="data" color="'#ff0000'" overview="'year'" sitem="selectedForStroke.item_number" stype="stroke_type"></calendar-heatmap>
             <div style="padding: 50px 30px 50px 20px;">
                 <div class="col-md-8">
                     <div class="container">
                         <ul class="nav nav-tabs">
                             <li class="active">
-                                <a data-toggle="tab" href="#home">General comparison</a>
+                                <a data-toggle="tab" href="#home">General comparison by quantity</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#menu1">Two items comparison</a>
+                                <a data-toggle="tab" href="#menu1">Two items comparison by quantity</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#menu2">General comparison by price</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#menu3">Two items comparison by price</a>
                             </li>
                         </ul>
 
@@ -58,6 +63,17 @@
                                         <select class="form-control" style="color:#3b5998" ng-model="selectedForStroke" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
                                             <option value="">-Choose-</option>
                                         </select>
+                                        <br>
+                                        <div class="form-group">
+                                            <button ng-click="GeneralCompare(); btnDisabled=true " class="btn btn-primary btn-xs" ng-model="applyFilterBtn" ng-disabled="selectedForStroke===null">
+                                                Apply Filter
+                                            </button>
+                                        </div>
+                                        <div class="form-group">
+                                            <button ng-click="removeFilteredData()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled">
+                                                Remove Filter
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -68,6 +84,7 @@
                                         <label for="">
                                             Select Items for comparison:
                                         </label>
+                                        <br>
                                         <select class="form-control" style="color:#ff4500" ng-model="cmprItem1" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
                                             <option value="">-Choose-</option>
                                         </select>
@@ -89,13 +106,66 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div id="menu2" class="tab-pane fade">
+                                <div class="container">
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="">
+                                            Select Item:
+                                        </label>
+                                        <br>
+                                        <!-- <select class="" ng-model="selectedForStroke" ng-options="item as item.item_number for item in itemsOptions"> -->
+                                        <select class="form-control" style="color:#3b5998" ng-model="selectedForStroke" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
+                                            <option value="">-Choose-</option>
+                                        </select>
+                                        <br>
+                                        <div class="form-group">
+                                            <button ng-click="GeneralCompareByPrice(); btnDisabled=true " class="btn btn-primary btn-xs" ng-model="applyFilterBtn" ng-disabled="selectedForStroke===null">
+                                                Apply Filter
+                                            </button>
+                                        </div>
+                                        <div class="form-group">
+                                            <button ng-click="removeFilteredData()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled">
+                                                Remove Filter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="menu3" class="tab-pane fade">
+                                <div class="container">
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="">
+                                            Select Items for comparison:
+                                        </label>
+                                        <br>
+                                        <select class="form-control" style="color:#ff4500" ng-model="cmprItem1" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
+                                            <option value="">-Choose-</option>
+                                        </select>
+                                        <br>
+                                        <select class="form-control" style="color:#3b5998" ng-model="cmprItem2" ng-options="item as item.item_number + '  -  ' + item.item_description for item in itemsOptions">
+                                            <option value="">-Choose-</option>
+                                        </select>
+                                        <br>
+                                        <div class="form-group">
+                                            <button ng-click="itemsCompareByPrice(); btnDisabled=true " class="btn btn-primary btn-xs" ng-model="applyFilterBtn" ng-disabled="cmprItem1===null || cmprItem2===null">
+                                                Apply Filter
+                                            </button>
+                                        </div>
+                                        <div class="form-group">
+                                            <button ng-click="removeFilteredData()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled">
+                                                Remove Filter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class=""></div>
-
     </body>
 </html>

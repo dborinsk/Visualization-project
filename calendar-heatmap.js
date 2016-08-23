@@ -12,7 +12,8 @@ directive('calendarHeatmap', ['$window', function($window) {
             color: '=?',
             overview: '=?',
             handler: '=?',
-            sitem: '=?'
+            sitem: '=?',
+            stype: '=?'
         },
         replace: true,
         template: '<div class="calendar-heatmap"></div>',
@@ -30,7 +31,7 @@ directive('calendarHeatmap', ['$window', function($window) {
             var in_transition = false;
 
             // Tooltip defaults
-            var tooltip_width = 250;
+            var tooltip_width = 350;
             var tooltip_padding = 15;
 
             // Initialize current overview type and history
@@ -38,6 +39,7 @@ directive('calendarHeatmap', ['$window', function($window) {
             scope.history = ['year'];
             scope.selected = {};
             scope.total_item = 0;
+            scope.total_price = 0;
 
             // Initialize svg element
             var svg = d3.select(element[0])
@@ -49,8 +51,8 @@ directive('calendarHeatmap', ['$window', function($window) {
             var labels = svg.append('g');
             var buttons = svg.append('g');
 
-            scope.$watch('sitem', function() {
-                console.log(scope.sitem);
+            scope.$watch('stype', function() {
+                console.log(scope.stype);
                 scope.drawChart();
             });
 
@@ -106,7 +108,7 @@ directive('calendarHeatmap', ['$window', function($window) {
                             return {
                                 'name': key,
                                 'value': summary[key].value,
-                                'price' : summary[key].price
+                                'price': summary[key].price
                             };
                         });
                         d.summary = unsorted_summary.sort(function(a, b) {
@@ -146,6 +148,8 @@ directive('calendarHeatmap', ['$window', function($window) {
              */
             scope.drawYearOverview = function() {
                 // Add current overview to the history
+                console.log(scope.stype);
+                console.log(scope.sitem);
                 if (scope.history[scope.history.length - 1] !== scope.overview) {
                     scope.history.push(scope.overview);
                 }
@@ -177,8 +181,10 @@ directive('calendarHeatmap', ['$window', function($window) {
                     return item_size * 0.75 + (item_size * d.total / max_value) * 0.25;
                 };
                 var calcStroke = function(d) {
-                        var item = scope.sitem;
-                        var total_item = 0;
+                    var item = scope.sitem;
+                    var total_item = 0;
+                    var total_price = 0;
+                    if (scope.stype === 'general') {
                         for (var i = 0; i < d.details.length; i++) {
                             if (d.details[i].name === item) {
                                 total_item += d.details[i].value;
@@ -189,7 +195,20 @@ directive('calendarHeatmap', ['$window', function($window) {
                             return 0;
                         }
                         return ((total_item / d.total) * 100) * 0.10;
+                    } else if (scope.stype === 'price') {
+                        for (var i = 0; i < d.details.length; i++) {
+                            if (d.details[i].name === item) {
+                                total_price += (d.details[i].value * d.details[i].price);
+                            }
+                        }
+                        scope.total_price = total_price;
+                        if (d.total === 0 || total_price === 0 || d.total === total_price) {
+                            return 0;
+                        }
+                        return ((total_price / d.total) * 100) * 0.10;
                     }
+
+                }
 
                 items.selectAll('.item-circle').remove();
                 items.selectAll('.item-circle')
@@ -221,18 +240,24 @@ directive('calendarHeatmap', ['$window', function($window) {
                         return calcItemSize(d);
                     })
                     .attr('fill', function(d) {
-                      var temo = calcStroke(d);
+                        var temp = calcStroke(d);
                         if (d.total > 0 && scope.sitem === undefined)
                             return color(d.total);
                         else if (d.total === 0 && scope.sitem === undefined)
                             return 'transparent';
                         else if (scope.sitem !== undefined && d.total === 0)
                             return 'transparent';
-                        else if (scope.sitem !== undefined && d.total === scope.total_item && d.details[0].name === scope.sitem) {
-                          //onsole.log('1');
+                        else if (scope.stype==='general' && scope.sitem !== undefined && d.total === scope.total_item && d.details[0].name === scope.sitem) {
+                            //onsole.log('1');
                             return color2(d.total);
-                        } else if (scope.sitem !== undefined && d.total > scope.total_item) {
-                          //console.log(scope.total_item);
+                        } else if (scope.stype==='general' && scope.sitem !== undefined && d.total > scope.total_item) {
+                            //console.log(scope.total_item);
+                            return color(d.total);
+                        } else if (scope.stype==='price' && scope.sitem !== undefined && d.total === scope.total_price && d.details[0].name === scope.sitem) {
+                            //onsole.log('1');
+                            return color2(d.total);
+                        } else if (scope.stype==='price' && scope.sitem !== undefined && d.total > scope.total_price) {
+                            //console.log(scope.total_item);
                             return color(d.total);
                         }
 
@@ -300,24 +325,37 @@ directive('calendarHeatmap', ['$window', function($window) {
                         // Construct tooltip
                         var tooltip_html = '';
                         //tooltip_html += '<div class="header"><strong>' + (d.total ? scope.formatTime(d.total) : 'No time') + ' tracked</strong></div>';
-                        tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No ') + ' units</strong></div>';
+                        scope.stype==='general' ? tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No ') + ' units</strong></div>' : tooltip_html += '<div class="header"><strong>' + (d.total ? (Math.round(d.total * 100) / 100 ) : '0 ') + ' ILS</strong></div>';
                         tooltip_html += '<div>on ' + moment(d.date).format('dddd, MMM Do YYYY') + '</div><br>';
 
                         // Add summary to the tooltip
-                        scope.numOfItems= 0;
-                        scope.sumOfItemsCost= 0;
-                        tooltip_html += '<div><strong><span>Item</span><span>Quantity</span><span>Price</span></strong>';
+                        scope.numOfItems = 0;
+                        scope.sumOfItemsCost = 0;
+                        tooltip_html += '<div><strong><span>Item</span><span>Quantity</span><span>Price</span><span>Cost</span></strong>';
                         angular.forEach(d.summary, function(d) {
                             scope.numOfItems++;
-                            scope.sumOfItemsCost+= (d.price)*d.value;
-                            tooltip_html += '<div><span>' + d.name + '</span>';
-                            //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
-                            tooltip_html += '<span>' + d.value + '</span>';
-                            tooltip_html += '<span>' + d.price + '</span></div>';
+                            scope.sumOfItemsCost += (d.price) * d.value;
+                            if(d.name===scope.sitem) {
+                              tooltip_html += '<div style="color:#3b5998"><strong><span>' + d.name + '</span>';
+                              //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
+                              tooltip_html += '<span>' + d.value + '</span>';
+                              tooltip_html += '<span>' + d.price + '</span>';
+                              tooltip_html += '<span>' + Math.round(d.price*d.value * 100) / 100 + '</span></strong></div>';
+                            } else {
+                              tooltip_html += '<div><span>' + d.name + '</span>';
+                              //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
+                              tooltip_html += '<span>' + d.value + '</span>';
+                              tooltip_html += '<span>' + d.price + '</span>';
+                              tooltip_html += '<span>' + Math.round(d.price*d.value * 100) / 100 + '</span></div>';
+                            }
+
                         });
-                        scope.sumOfItemsCost=Math.round(scope.sumOfItemsCost * 100) / 100;
-                        tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
-                        tooltip_html += '<div class="header"><strong>' + (scope.sumOfItemsCost) + ' ILS</strong></div>';
+                        scope.sumOfItemsCost = Math.round(scope.sumOfItemsCost * 100) / 100;
+                        if(scope.stype==='general') {
+                          tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
+                          tooltip_html += '<div class="header"><strong>' + (scope.sumOfItemsCost) + ' ILS</strong></div>';
+                        }
+
 
                         // Calculate tooltip position
                         var x = calcItemX(d) + item_size;
