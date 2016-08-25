@@ -290,7 +290,7 @@ app.controller("mainController", function($scope, $http) {
     // }
 
     $scope.removeFilteredData = function() {
-
+      $scope.stroke_type = 'general';
             $http.get('json/sales_with_prices.json')
                 .then(function(res) {
                     $scope.item = null;
