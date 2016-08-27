@@ -1,0 +1,3060 @@
+[{
+    "date": "2015-04-30",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-01",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-02",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-03",
+    "total": 48,
+    "details": [{
+        "name": "900098",
+        "date": "2015-05-03",
+        "value": 10,
+        "price": 38
+    }, {
+        "name": "900086",
+        "date": "2015-05-03",
+        "value": 19,
+        "price": 47
+    }, {
+        "name": "900086",
+        "date": "2015-05-03",
+        "value": 19,
+        "price": 47
+    }]
+}, {
+    "date": "2015-05-04",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-06",
+    "total": 56,
+    "details": [{
+        "name": "900086",
+        "date": "2015-05-06",
+        "value": 22,
+        "price": 38
+    }, {
+        "name": "900086",
+        "date": "2015-05-06",
+        "value": 22,
+        "price": 38
+    }, {
+        "name": "900147",
+        "date": "2015-05-06",
+        "value": 12,
+        "price": 38
+    }]
+}, {
+    "date": "2015-05-07",
+    "total": 36,
+    "details": [{
+        "name": "900220",
+        "date": "2015-05-07",
+        "value": 15,
+        "price": 50
+    }, {
+        "name": "900017",
+        "date": "2015-05-07",
+        "value": 8,
+        "price": 57
+    }, {
+        "name": "900010",
+        "date": "2015-05-07",
+        "value": 13,
+        "price": 66
+    }]
+}, {
+    "date": "2015-05-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-09",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-10",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-13",
+    "total": 36,
+    "details": [{
+        "name": "900055",
+        "date": "2015-05-13",
+        "value": 17,
+        "price": 16
+    }, {
+        "name": "900199",
+        "date": "2015-05-13",
+        "value": 10,
+        "price": 57
+    }, {
+        "name": "900166",
+        "date": "2015-05-13",
+        "value": 9,
+        "price": 41
+    }]
+}, {
+    "date": "2015-05-14",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-15",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-19",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-21",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-24",
+    "total": 34,
+    "details": [{
+        "name": "900004",
+        "date": "2015-05-24",
+        "value": 17,
+        "price": 36
+    }, {
+        "name": "900197",
+        "date": "2015-05-24",
+        "value": 17,
+        "price": 49
+    }]
+}, {
+    "date": "2015-05-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-26",
+    "total": 55,
+    "details": [{
+        "name": "900124",
+        "date": "2015-05-26",
+        "value": 20,
+        "price": 20
+    }, {
+        "name": "900083",
+        "date": "2015-05-26",
+        "value": 17,
+        "price": 37
+    }, {
+        "name": "900083",
+        "date": "2015-05-26",
+        "value": 17,
+        "price": 37
+    }]
+}, {
+    "date": "2015-05-27",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-28",
+    "total": 103,
+    "details": [{
+        "name": "900140",
+        "date": "2015-05-28",
+        "value": 16,
+        "price": 7
+    }, {
+        "name": "900051",
+        "date": "2015-05-28",
+        "value": 23,
+        "price": 7
+    }, {
+        "name": "900002",
+        "date": "2015-05-28",
+        "value": 8,
+        "price": 38
+    }, {
+        "name": "900158",
+        "date": "2015-05-28",
+        "value": 24,
+        "price": 15
+    }, {
+        "name": "900144",
+        "date": "2015-05-28",
+        "value": 13,
+        "price": 27
+    }, {
+        "name": "900161",
+        "date": "2015-05-28",
+        "value": 4,
+        "price": 26
+    }, {
+        "name": "900220",
+        "date": "2015-05-28",
+        "value": 14,
+        "price": 50
+    }]
+}, {
+    "date": "2015-05-29",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-30",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-05-31",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-01",
+    "total": 51,
+    "details": [{
+        "name": "900064",
+        "date": "2015-06-01",
+        "value": 15,
+        "price": 23
+    }, {
+        "name": "900130",
+        "date": "2015-06-01",
+        "value": 24,
+        "price": 61
+    }, {
+        "name": "900082",
+        "date": "2015-06-01",
+        "value": 12,
+        "price": 14
+    }]
+}, {
+    "date": "2015-06-02",
+    "total": 75,
+    "details": [{
+        "name": "900226",
+        "date": "2015-06-02",
+        "value": 25,
+        "price": 74
+    }, {
+        "name": "900083",
+        "date": "2015-06-02",
+        "value": 17,
+        "price": 37
+    }, {
+        "name": "900083",
+        "date": "2015-06-02",
+        "value": 17,
+        "price": 37
+    }, {
+        "name": "900184",
+        "date": "2015-06-02",
+        "value": 17,
+        "price": 59
+    }]
+}, {
+    "date": "2015-06-03",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-04",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-06",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-07",
+    "total": 8,
+    "details": [{
+        "name": "900030",
+        "date": "2015-06-07",
+        "value": 8,
+        "price": 39
+    }]
+}, {
+    "date": "2015-06-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-09",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-10",
+    "total": 49,
+    "details": [{
+        "name": "900015",
+        "date": "2015-06-10",
+        "value": 4,
+        "price": 53
+    }, {
+        "name": "900083",
+        "date": "2015-06-10",
+        "value": 23,
+        "price": 37
+    }, {
+        "name": "900083",
+        "date": "2015-06-10",
+        "value": 23,
+        "price": 37
+    }]
+}, {
+    "date": "2015-06-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-13",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-14",
+    "total": 80,
+    "details": [{
+        "name": "900010",
+        "date": "2015-06-14",
+        "value": 20,
+        "price": 63
+    }, {
+        "name": "900213",
+        "date": "2015-06-14",
+        "value": 22,
+        "price": 59
+    }, {
+        "name": "900016",
+        "date": "2015-06-14",
+        "value": 18,
+        "price": 5
+    }, {
+        "name": "900014",
+        "date": "2015-06-14",
+        "value": 20,
+        "price": 38
+    }]
+}, {
+    "date": "2015-06-15",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-18",
+    "total": 26,
+    "details": [{
+        "name": "900008",
+        "date": "2015-06-18",
+        "value": 14,
+        "price": 34
+    }, {
+        "name": "900060",
+        "date": "2015-06-18",
+        "value": 12,
+        "price": 33
+    }]
+}, {
+    "date": "2015-06-19",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-21",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-22",
+    "total": 14,
+    "details": [{
+        "name": "900193",
+        "date": "2015-06-22",
+        "value": 14,
+        "price": 16
+    }]
+}, {
+    "date": "2015-06-23",
+    "total": 7,
+    "details": [{
+        "name": "900014",
+        "date": "2015-06-23",
+        "value": 7,
+        "price": 38
+    }]
+}, {
+    "date": "2015-06-24",
+    "total": 87,
+    "details": [{
+        "name": "900049",
+        "date": "2015-06-24",
+        "value": 19,
+        "price": 71
+    }, {
+        "name": "900004",
+        "date": "2015-06-24",
+        "value": 14,
+        "price": 58
+    }, {
+        "name": "900283",
+        "date": "2015-06-24",
+        "value": 11,
+        "price": 44
+    }, {
+        "name": "900180",
+        "date": "2015-06-24",
+        "value": 22,
+        "price": 38
+    }, {
+        "name": "900050",
+        "date": "2015-06-24",
+        "value": 21,
+        "price": 21
+    }]
+}, {
+    "date": "2015-06-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-26",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-27",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-28",
+    "total": 35,
+    "details": [{
+        "name": "900048",
+        "date": "2015-06-28",
+        "value": 19,
+        "price": 32
+    }, {
+        "name": "900204",
+        "date": "2015-06-28",
+        "value": 16,
+        "price": 71
+    }]
+}, {
+    "date": "2015-06-29",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-06-30",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-01",
+    "total": 20,
+    "details": [{
+        "name": "900160",
+        "date": "2015-07-01",
+        "value": 4,
+        "price": 57
+    }, {
+        "name": "900076",
+        "date": "2015-07-01",
+        "value": 16,
+        "price": 28
+    }]
+}, {
+    "date": "2015-07-02",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-03",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-04",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-06",
+    "total": 18,
+    "details": [{
+        "name": "900056",
+        "date": "2015-07-06",
+        "value": 9,
+        "price": 61
+    }, {
+        "name": "900096",
+        "date": "2015-07-06",
+        "value": 9,
+        "price": 46
+    }]
+}, {
+    "date": "2015-07-07",
+    "total": 17,
+    "details": [{
+        "name": "900104",
+        "date": "2015-07-07",
+        "value": 17,
+        "price": 27
+    }]
+}, {
+    "date": "2015-07-08",
+    "total": 11,
+    "details": [{
+        "name": "900219",
+        "date": "2015-07-08",
+        "value": 11,
+        "price": 12
+    }]
+}, {
+    "date": "2015-07-09",
+    "total": 41,
+    "details": [{
+        "name": "900014",
+        "date": "2015-07-09",
+        "value": 21,
+        "price": 21
+    }, {
+        "name": "900224",
+        "date": "2015-07-09",
+        "value": 13,
+        "price": 39
+    }, {
+        "name": "900021",
+        "date": "2015-07-09",
+        "value": 7,
+        "price": 59
+    }]
+}, {
+    "date": "2015-07-10",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-13",
+    "total": 16,
+    "details": [{
+        "name": "900113",
+        "date": "2015-07-13",
+        "value": 16,
+        "price": 59
+    }]
+}, {
+    "date": "2015-07-14",
+    "total": 38,
+    "details": [{
+        "name": "900086",
+        "date": "2015-07-14",
+        "value": 14,
+        "price": 48
+    }, {
+        "name": "900086",
+        "date": "2015-07-14",
+        "value": 14,
+        "price": 48
+    }, {
+        "name": "900085",
+        "date": "2015-07-14",
+        "value": 5,
+        "price": 4
+    }, {
+        "name": "900085",
+        "date": "2015-07-14",
+        "value": 5,
+        "price": 4
+    }]
+}, {
+    "date": "2015-07-15",
+    "total": 10,
+    "details": [{
+        "name": "900098",
+        "date": "2015-07-15",
+        "value": 10,
+        "price": 66
+    }]
+}, {
+    "date": "2015-07-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-19",
+    "total": 53,
+    "details": [{
+        "name": "900085",
+        "date": "2015-07-19",
+        "value": 23,
+        "price": 4
+    }, {
+        "name": "900085",
+        "date": "2015-07-19",
+        "value": 23,
+        "price": 4
+    }, {
+        "name": "900183",
+        "date": "2015-07-19",
+        "value": 8,
+        "price": 39
+    }]
+}, {
+    "date": "2015-07-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-21",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-24",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-26",
+    "total": 160,
+    "details": [{
+        "name": "900196",
+        "date": "2015-07-26",
+        "value": 24,
+        "price": 17
+    }, {
+        "name": "900206",
+        "date": "2015-07-26",
+        "value": 10,
+        "price": 24
+    }, {
+        "name": "900138",
+        "date": "2015-07-26",
+        "value": 19,
+        "price": 47
+    }, {
+        "name": "900084",
+        "date": "2015-07-26",
+        "value": 12,
+        "price": 74
+    }, {
+        "name": "900084",
+        "date": "2015-07-26",
+        "value": 12,
+        "price": 74
+    }, {
+        "name": "900162",
+        "date": "2015-07-26",
+        "value": 24,
+        "price": 59
+    }, {
+        "name": "900085",
+        "date": "2015-07-26",
+        "value": 11,
+        "price": 73
+    }, {
+        "name": "900085",
+        "date": "2015-07-26",
+        "value": 11,
+        "price": 73
+    }, {
+        "name": "900086",
+        "date": "2015-07-26",
+        "value": 18,
+        "price": 41
+    }, {
+        "name": "900086",
+        "date": "2015-07-26",
+        "value": 18,
+        "price": 41
+    }]
+}, {
+    "date": "2015-07-27",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-07-28",
+    "total": 4,
+    "details": [{
+        "name": "900177",
+        "date": "2015-07-28",
+        "value": 4,
+        "price": 20
+    }]
+}, {
+    "date": "2015-07-29",
+    "total": 39,
+    "details": [{
+        "name": "900105",
+        "date": "2015-07-29",
+        "value": 20,
+        "price": 56
+    }, {
+        "name": "900119",
+        "date": "2015-07-29",
+        "value": 19,
+        "price": 45
+    }]
+}, {
+    "date": "2015-07-30",
+    "total": 16,
+    "details": [{
+        "name": "900085",
+        "date": "2015-07-30",
+        "value": 8,
+        "price": 39
+    }, {
+        "name": "900085",
+        "date": "2015-07-30",
+        "value": 8,
+        "price": 39
+    }]
+}, {
+    "date": "2015-07-31",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-01",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-02",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-03",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-04",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-06",
+    "total": 4,
+    "details": [{
+        "name": "900096",
+        "date": "2015-08-06",
+        "value": 4,
+        "price": 27
+    }]
+}, {
+    "date": "2015-08-07",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-09",
+    "total": 32,
+    "details": [{
+        "name": "900225",
+        "date": "2015-08-09",
+        "value": 5,
+        "price": 69
+    }, {
+        "name": "900104",
+        "date": "2015-08-09",
+        "value": 12,
+        "price": 8
+    }, {
+        "name": "900283",
+        "date": "2015-08-09",
+        "value": 15,
+        "price": 44
+    }]
+}, {
+    "date": "2015-08-10",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-13",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-14",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-15",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-19",
+    "total": 29,
+    "details": [{
+        "name": "900176",
+        "date": "2015-08-19",
+        "value": 7,
+        "price": 59
+    }, {
+        "name": "900021",
+        "date": "2015-08-19",
+        "value": 13,
+        "price": 35
+    }, {
+        "name": "900072",
+        "date": "2015-08-19",
+        "value": 8,
+        "price": 4
+    }]
+}, {
+    "date": "2015-08-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-21",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-24",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-25",
+    "total": 76,
+    "details": [{
+        "name": "900042",
+        "date": "2015-08-25",
+        "value": 9,
+        "price": 13
+    }, {
+        "name": "900084",
+        "date": "2015-08-25",
+        "value": 19,
+        "price": 17
+    }, {
+        "name": "900084",
+        "date": "2015-08-25",
+        "value": 19,
+        "price": 17
+    }, {
+        "name": "900155",
+        "date": "2015-08-25",
+        "value": 8,
+        "price": 34
+    }, {
+        "name": "900032",
+        "date": "2015-08-25",
+        "value": 12,
+        "price": 16
+    }, {
+        "name": "900132",
+        "date": "2015-08-25",
+        "value": 4,
+        "price": 34
+    }, {
+        "name": "900226",
+        "date": "2015-08-25",
+        "value": 6,
+        "price": 16
+    }]
+}, {
+    "date": "2015-08-26",
+    "total": 7,
+    "details": [{
+        "name": "900073",
+        "date": "2015-08-26",
+        "value": 7,
+        "price": 52
+    }]
+}, {
+    "date": "2015-08-27",
+    "total": 23,
+    "details": [{
+        "name": "900051",
+        "date": "2015-08-27",
+        "value": 20,
+        "price": 72
+    }, {
+        "name": "900146",
+        "date": "2015-08-27",
+        "value": 3,
+        "price": 6
+    }]
+}, {
+    "date": "2015-08-28",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-29",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-08-30",
+    "total": 60,
+    "details": [{
+        "name": "900178",
+        "date": "2015-08-30",
+        "value": 20,
+        "price": 49
+    }, {
+        "name": "900284",
+        "date": "2015-08-30",
+        "value": 17,
+        "price": 57
+    }, {
+        "name": "900084",
+        "date": "2015-08-30",
+        "value": 11,
+        "price": 17
+    }, {
+        "name": "900084",
+        "date": "2015-08-30",
+        "value": 11,
+        "price": 17
+    }]
+}, {
+    "date": "2015-08-31",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-01",
+    "total": 6,
+    "details": [{
+        "name": "900283",
+        "date": "2015-09-01",
+        "value": 6,
+        "price": 58
+    }]
+}, {
+    "date": "2015-09-02",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-03",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-04",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-06",
+    "total": 35,
+    "details": [{
+        "name": "900109",
+        "date": "2015-09-06",
+        "value": 9,
+        "price": 52
+    }, {
+        "name": "900283",
+        "date": "2015-09-06",
+        "value": 8,
+        "price": 58
+    }, {
+        "name": "900001",
+        "date": "2015-09-06",
+        "value": 18,
+        "price": 47
+    }]
+}, {
+    "date": "2015-09-07",
+    "total": 40,
+    "details": [{
+        "name": "900033",
+        "date": "2015-09-07",
+        "value": 8,
+        "price": 19
+    }, {
+        "name": "900123",
+        "date": "2015-09-07",
+        "value": 18,
+        "price": 49
+    }, {
+        "name": "900162",
+        "date": "2015-09-07",
+        "value": 15,
+        "price": 47
+    }]
+}, {
+    "date": "2015-09-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-09",
+    "total": 20,
+    "details": [{
+        "name": "900009",
+        "date": "2015-09-09",
+        "value": 17,
+        "price": 33
+    }, {
+        "name": "900097",
+        "date": "2015-09-09",
+        "value": 3,
+        "price": 69
+    }]
+}, {
+    "date": "2015-09-10",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-13",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-14",
+    "total": 43,
+    "details": [{
+        "name": "900283",
+        "date": "2015-09-14",
+        "value": 18,
+        "price": 58
+    }, {
+        "name": "900142",
+        "date": "2015-09-14",
+        "value": 20,
+        "price": 37
+    }, {
+        "name": "900166",
+        "date": "2015-09-14",
+        "value": 5,
+        "price": 4
+    }]
+}, {
+    "date": "2015-09-15",
+    "total": 34,
+    "details": [{
+        "name": "900161",
+        "date": "2015-09-15",
+        "value": 18,
+        "price": 26
+    }, {
+        "name": "900177",
+        "date": "2015-09-15",
+        "value": 16,
+        "price": 50
+    }]
+}, {
+    "date": "2015-09-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-19",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-20",
+    "total": 89,
+    "details": [{
+        "name": "900060",
+        "date": "2015-09-20",
+        "value": 19,
+        "price": 33
+    }, {
+        "name": "900180",
+        "date": "2015-09-20",
+        "value": 17,
+        "price": 65
+    }, {
+        "name": "900284",
+        "date": "2015-09-20",
+        "value": 16,
+        "price": 57
+    }, {
+        "name": "900116",
+        "date": "2015-09-20",
+        "value": 20,
+        "price": 19
+    }, {
+        "name": "900198",
+        "date": "2015-09-20",
+        "value": 17,
+        "price": 14
+    }]
+}, {
+    "date": "2015-09-21",
+    "total": 61,
+    "details": [{
+        "name": "900086",
+        "date": "2015-09-21",
+        "value": 6,
+        "price": 48
+    }, {
+        "name": "900086",
+        "date": "2015-09-21",
+        "value": 6,
+        "price": 48
+    }, {
+        "name": "900085",
+        "date": "2015-09-21",
+        "value": 24,
+        "price": 4
+    }, {
+        "name": "900085",
+        "date": "2015-09-21",
+        "value": 24,
+        "price": 4
+    }]
+}, {
+    "date": "2015-09-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-24",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-26",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-27",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-09-28",
+    "total": 30,
+    "details": [{
+        "name": "900140",
+        "date": "2015-09-28",
+        "value": 10,
+        "price": 54
+    }, {
+        "name": "900017",
+        "date": "2015-09-28",
+        "value": 19,
+        "price": 67
+    }]
+}, {
+    "date": "2015-09-29",
+    "total": 19,
+    "details": [{
+        "name": "900154",
+        "date": "2015-09-29",
+        "value": 4,
+        "price": 13
+    }, {
+        "name": "900217",
+        "date": "2015-09-29",
+        "value": 15,
+        "price": 49
+    }]
+}, {
+    "date": "2015-09-30",
+    "total": 59,
+    "details": [{
+        "name": "900069",
+        "date": "2015-09-30",
+        "value": 11,
+        "price": 33
+    }, {
+        "name": "900091",
+        "date": "2015-09-30",
+        "value": 5,
+        "price": 14
+    }, {
+        "name": "900138",
+        "date": "2015-09-30",
+        "value": 22,
+        "price": 27
+    }, {
+        "name": "900127",
+        "date": "2015-09-30",
+        "value": 20,
+        "price": 4
+    }]
+}, {
+    "date": "2015-10-01",
+    "total": 30,
+    "details": [{
+        "name": "900208",
+        "date": "2015-10-01",
+        "value": 24,
+        "price": 20
+    }, {
+        "name": "900131",
+        "date": "2015-10-01",
+        "value": 3,
+        "price": 58
+    }, {
+        "name": "900069",
+        "date": "2015-10-01",
+        "value": 3,
+        "price": 33
+    }]
+}, {
+    "date": "2015-10-02",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-03",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-04",
+    "total": 4,
+    "details": [{
+        "name": "900041",
+        "date": "2015-10-04",
+        "value": 4,
+        "price": 31
+    }]
+}, {
+    "date": "2015-10-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-06",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-07",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-09",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-10",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-11",
+    "total": 36,
+    "details": [{
+        "name": "900090",
+        "date": "2015-10-11",
+        "value": 3,
+        "price": 39
+    }, {
+        "name": "900084",
+        "date": "2015-10-11",
+        "value": 7,
+        "price": 17
+    }, {
+        "name": "900084",
+        "date": "2015-10-11",
+        "value": 7,
+        "price": 17
+    }, {
+        "name": "900284",
+        "date": "2015-10-11",
+        "value": 15,
+        "price": 57
+    }, {
+        "name": "900205",
+        "date": "2015-10-11",
+        "value": 4,
+        "price": 57
+    }]
+}, {
+    "date": "2015-10-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-13",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-14",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-15",
+    "total": 51,
+    "details": [{
+        "name": "900118",
+        "date": "2015-10-15",
+        "value": 14,
+        "price": 74
+    }, {
+        "name": "900013",
+        "date": "2015-10-15",
+        "value": 16,
+        "price": 40
+    }, {
+        "name": "900091",
+        "date": "2015-10-15",
+        "value": 21,
+        "price": 64
+    }]
+}, {
+    "date": "2015-10-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-19",
+    "total": 45,
+    "details": [{
+        "name": "900197",
+        "date": "2015-10-19",
+        "value": 21,
+        "price": 36
+    }, {
+        "name": "900183",
+        "date": "2015-10-19",
+        "value": 12,
+        "price": 70
+    }, {
+        "name": "900121",
+        "date": "2015-10-19",
+        "value": 12,
+        "price": 57
+    }]
+}, {
+    "date": "2015-10-20",
+    "total": 15,
+    "details": [{
+        "name": "900170",
+        "date": "2015-10-20",
+        "value": 15,
+        "price": 41
+    }]
+}, {
+    "date": "2015-10-21",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-22",
+    "total": 106,
+    "details": [{
+        "name": "900026",
+        "date": "2015-10-22",
+        "value": 25,
+        "price": 13
+    }, {
+        "name": "900084",
+        "date": "2015-10-22",
+        "value": 14,
+        "price": 74
+    }, {
+        "name": "900084",
+        "date": "2015-10-22",
+        "value": 14,
+        "price": 74
+    }, {
+        "name": "900018",
+        "date": "2015-10-22",
+        "value": 21,
+        "price": 48
+    }, {
+        "name": "900170",
+        "date": "2015-10-22",
+        "value": 9,
+        "price": 71
+    }, {
+        "name": "900225",
+        "date": "2015-10-22",
+        "value": 24,
+        "price": 56
+    }]
+}, {
+    "date": "2015-10-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-24",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-26",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-27",
+    "total": 3,
+    "details": [{
+        "name": "900182",
+        "date": "2015-10-27",
+        "value": 3,
+        "price": 56
+    }]
+}, {
+    "date": "2015-10-28",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-29",
+    "total": 58,
+    "details": [{
+        "name": "900080",
+        "date": "2015-10-29",
+        "value": 23,
+        "price": 19
+    }, {
+        "name": "900121",
+        "date": "2015-10-29",
+        "value": 3,
+        "price": 71
+    }, {
+        "name": "900139",
+        "date": "2015-10-29",
+        "value": 11,
+        "price": 69
+    }, {
+        "name": "900097",
+        "date": "2015-10-29",
+        "value": 21,
+        "price": 13
+    }]
+}, {
+    "date": "2015-10-30",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-10-31",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-01",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-02",
+    "total": 26,
+    "details": [{
+        "name": "900083",
+        "date": "2015-11-02",
+        "value": 13,
+        "price": 37
+    }, {
+        "name": "900083",
+        "date": "2015-11-02",
+        "value": 13,
+        "price": 37
+    }]
+}, {
+    "date": "2015-11-03",
+    "total": 3,
+    "details": [{
+        "name": "900053",
+        "date": "2015-11-03",
+        "value": 3,
+        "price": 49
+    }]
+}, {
+    "date": "2015-11-04",
+    "total": 85,
+    "details": [{
+        "name": "900086",
+        "date": "2015-11-04",
+        "value": 23,
+        "price": 26
+    }, {
+        "name": "900086",
+        "date": "2015-11-04",
+        "value": 23,
+        "price": 26
+    }, {
+        "name": "900169",
+        "date": "2015-11-04",
+        "value": 20,
+        "price": 54
+    }, {
+        "name": "900185",
+        "date": "2015-11-04",
+        "value": 21,
+        "price": 32
+    }]
+}, {
+    "date": "2015-11-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-06",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-07",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-08",
+    "total": 45,
+    "details": [{
+        "name": "900084",
+        "date": "2015-11-08",
+        "value": 23,
+        "price": 17
+    }, {
+        "name": "900084",
+        "date": "2015-11-08",
+        "value": 23,
+        "price": 17
+    }]
+}, {
+    "date": "2015-11-09",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-10",
+    "total": 14,
+    "details": [{
+        "name": "900221",
+        "date": "2015-11-10",
+        "value": 14,
+        "price": 37
+    }]
+}, {
+    "date": "2015-11-11",
+    "total": 85,
+    "details": [{
+        "name": "900226",
+        "date": "2015-11-11",
+        "value": 20,
+        "price": 28
+    }, {
+        "name": "900095",
+        "date": "2015-11-11",
+        "value": 15,
+        "price": 23
+    }, {
+        "name": "900103",
+        "date": "2015-11-11",
+        "value": 22,
+        "price": 35
+    }, {
+        "name": "900190",
+        "date": "2015-11-11",
+        "value": 5,
+        "price": 24
+    }, {
+        "name": "900040",
+        "date": "2015-11-11",
+        "value": 23,
+        "price": 14
+    }]
+}, {
+    "date": "2015-11-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-13",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-14",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-15",
+    "total": 22,
+    "details": [{
+        "name": "900217",
+        "date": "2015-11-15",
+        "value": 10,
+        "price": 5
+    }, {
+        "name": "900211",
+        "date": "2015-11-15",
+        "value": 11,
+        "price": 58
+    }]
+}, {
+    "date": "2015-11-16",
+    "total": 47,
+    "details": [{
+        "name": "900165",
+        "date": "2015-11-16",
+        "value": 17,
+        "price": 58
+    }, {
+        "name": "900201",
+        "date": "2015-11-16",
+        "value": 7,
+        "price": 40
+    }, {
+        "name": "900176",
+        "date": "2015-11-16",
+        "value": 23,
+        "price": 28
+    }]
+}, {
+    "date": "2015-11-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-19",
+    "total": 10,
+    "details": [{
+        "name": "900095",
+        "date": "2015-11-19",
+        "value": 10,
+        "price": 74
+    }]
+}, {
+    "date": "2015-11-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-21",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-24",
+    "total": 27,
+    "details": [{
+        "name": "900163",
+        "date": "2015-11-24",
+        "value": 9,
+        "price": 30
+    }, {
+        "name": "900156",
+        "date": "2015-11-24",
+        "value": 18,
+        "price": 3
+    }]
+}, {
+    "date": "2015-11-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-26",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-27",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-28",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-11-29",
+    "total": 3,
+    "details": [{
+        "name": "900140",
+        "date": "2015-11-29",
+        "value": 3,
+        "price": 65
+    }]
+}, {
+    "date": "2015-11-30",
+    "total": 23,
+    "details": [{
+        "name": "900041",
+        "date": "2015-11-30",
+        "value": 23,
+        "price": 23
+    }]
+}, {
+    "date": "2015-12-01",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-02",
+    "total": 40,
+    "details": [{
+        "name": "900124",
+        "date": "2015-12-02",
+        "value": 16,
+        "price": 23
+    }, {
+        "name": "900045",
+        "date": "2015-12-02",
+        "value": 9,
+        "price": 14
+    }, {
+        "name": "900015",
+        "date": "2015-12-02",
+        "value": 15,
+        "price": 48
+    }]
+}, {
+    "date": "2015-12-03",
+    "total": 75,
+    "details": [{
+        "name": "900062",
+        "date": "2015-12-03",
+        "value": 9,
+        "price": 43
+    }, {
+        "name": "900183",
+        "date": "2015-12-03",
+        "value": 18,
+        "price": 70
+    }, {
+        "name": "900122",
+        "date": "2015-12-03",
+        "value": 23,
+        "price": 56
+    }, {
+        "name": "900139",
+        "date": "2015-12-03",
+        "value": 24,
+        "price": 26
+    }]
+}, {
+    "date": "2015-12-04",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-06",
+    "total": 3,
+    "details": [{
+        "name": "900006",
+        "date": "2015-12-06",
+        "value": 3,
+        "price": 49
+    }]
+}, {
+    "date": "2015-12-07",
+    "total": 54,
+    "details": [{
+        "name": "900101",
+        "date": "2015-12-07",
+        "value": 19,
+        "price": 44
+    }, {
+        "name": "900109",
+        "date": "2015-12-07",
+        "value": 18,
+        "price": 33
+    }, {
+        "name": "900098",
+        "date": "2015-12-07",
+        "value": 17,
+        "price": 17
+    }]
+}, {
+    "date": "2015-12-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-09",
+    "total": 37,
+    "details": [{
+        "name": "900073",
+        "date": "2015-12-09",
+        "value": 14,
+        "price": 9
+    }, {
+        "name": "900208",
+        "date": "2015-12-09",
+        "value": 5,
+        "price": 6
+    }, {
+        "name": "900181",
+        "date": "2015-12-09",
+        "value": 18,
+        "price": 5
+    }]
+}, {
+    "date": "2015-12-10",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-13",
+    "total": 48,
+    "details": [{
+        "name": "900085",
+        "date": "2015-12-13",
+        "value": 24,
+        "price": 53
+    }, {
+        "name": "900085",
+        "date": "2015-12-13",
+        "value": 24,
+        "price": 53
+    }]
+}, {
+    "date": "2015-12-14",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-15",
+    "total": 15,
+    "details": [{
+        "name": "900061",
+        "date": "2015-12-15",
+        "value": 15,
+        "price": 2
+    }]
+}, {
+    "date": "2015-12-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-19",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-21",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-23",
+    "total": 19,
+    "details": [{
+        "name": "900152",
+        "date": "2015-12-23",
+        "value": 19,
+        "price": 45
+    }]
+}, {
+    "date": "2015-12-24",
+    "total": 110,
+    "details": [{
+        "name": "900042",
+        "date": "2015-12-24",
+        "value": 21,
+        "price": 15
+    }, {
+        "name": "900144",
+        "date": "2015-12-24",
+        "value": 15,
+        "price": 27
+    }, {
+        "name": "900219",
+        "date": "2015-12-24",
+        "value": 5,
+        "price": 29
+    }, {
+        "name": "900085",
+        "date": "2015-12-24",
+        "value": 23,
+        "price": 53
+    }, {
+        "name": "900085",
+        "date": "2015-12-24",
+        "value": 23,
+        "price": 53
+    }, {
+        "name": "900121",
+        "date": "2015-12-24",
+        "value": 22,
+        "price": 28
+    }]
+}, {
+    "date": "2015-12-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-26",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-27",
+    "total": 29,
+    "details": [{
+        "name": "900040",
+        "date": "2015-12-27",
+        "value": 6,
+        "price": 47
+    }, {
+        "name": "900178",
+        "date": "2015-12-27",
+        "value": 23,
+        "price": 71
+    }]
+}, {
+    "date": "2015-12-28",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2015-12-29",
+    "total": 34,
+    "details": [{
+        "name": "900071",
+        "date": "2015-12-29",
+        "value": 13,
+        "price": 35
+    }, {
+        "name": "900187",
+        "date": "2015-12-29",
+        "value": 4,
+        "price": 18
+    }, {
+        "name": "900086",
+        "date": "2015-12-29",
+        "value": 7,
+        "price": 48
+    }, {
+        "name": "900086",
+        "date": "2015-12-29",
+        "value": 7,
+        "price": 48
+    }, {
+        "name": "900068",
+        "date": "2015-12-29",
+        "value": 3,
+        "price": 35
+    }]
+}, {
+    "date": "2015-12-30",
+    "total": 4,
+    "details": [{
+        "name": "900284",
+        "date": "2015-12-30",
+        "value": 4,
+        "price": 57
+    }]
+}, {
+    "date": "2015-12-31",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-01",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-02",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-03",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-04",
+    "total": 32,
+    "details": [{
+        "name": "900070",
+        "date": "2016-01-04",
+        "value": 9,
+        "price": 23
+    }, {
+        "name": "900181",
+        "date": "2016-01-04",
+        "value": 19,
+        "price": 6
+    }, {
+        "name": "900175",
+        "date": "2016-01-04",
+        "value": 5,
+        "price": 60
+    }]
+}, {
+    "date": "2016-01-05",
+    "total": 11,
+    "details": [{
+        "name": "900055",
+        "date": "2016-01-05",
+        "value": 11,
+        "price": 30
+    }]
+}, {
+    "date": "2016-01-06",
+    "total": 32,
+    "details": [{
+        "name": "900109",
+        "date": "2016-01-06",
+        "value": 9,
+        "price": 68
+    }, {
+        "name": "900146",
+        "date": "2016-01-06",
+        "value": 14,
+        "price": 40
+    }, {
+        "name": "900283",
+        "date": "2016-01-06",
+        "value": 8,
+        "price": 44
+    }]
+}, {
+    "date": "2016-01-07",
+    "total": 17,
+    "details": [{
+        "name": "900152",
+        "date": "2016-01-07",
+        "value": 12,
+        "price": 16
+    }, {
+        "name": "900222",
+        "date": "2016-01-07",
+        "value": 5,
+        "price": 40
+    }]
+}, {
+    "date": "2016-01-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-09",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-10",
+    "total": 36,
+    "details": [{
+        "name": "900052",
+        "date": "2016-01-10",
+        "value": 4,
+        "price": 16
+    }, {
+        "name": "900119",
+        "date": "2016-01-10",
+        "value": 18,
+        "price": 38
+    }, {
+        "name": "900085",
+        "date": "2016-01-10",
+        "value": 7,
+        "price": 39
+    }, {
+        "name": "900085",
+        "date": "2016-01-10",
+        "value": 7,
+        "price": 39
+    }]
+}, {
+    "date": "2016-01-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-13",
+    "total": 85,
+    "details": [{
+        "name": "900014",
+        "date": "2016-01-13",
+        "value": 15,
+        "price": 14
+    }, {
+        "name": "900085",
+        "date": "2016-01-13",
+        "value": 24,
+        "price": 53
+    }, {
+        "name": "900085",
+        "date": "2016-01-13",
+        "value": 24,
+        "price": 53
+    }, {
+        "name": "900096",
+        "date": "2016-01-13",
+        "value": 22,
+        "price": 0
+    }]
+}, {
+    "date": "2016-01-14",
+    "total": 6,
+    "details": [{
+        "name": "900091",
+        "date": "2016-01-14",
+        "value": 6,
+        "price": 64
+    }]
+}, {
+    "date": "2016-01-15",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-19",
+    "total": 4,
+    "details": [{
+        "name": "900107",
+        "date": "2016-01-19",
+        "value": 4,
+        "price": 48
+    }]
+}, {
+    "date": "2016-01-20",
+    "total": 32,
+    "details": [{
+        "name": "900154",
+        "date": "2016-01-20",
+        "value": 13,
+        "price": 24
+    }, {
+        "name": "900050",
+        "date": "2016-01-20",
+        "value": 20,
+        "price": 42
+    }]
+}, {
+    "date": "2016-01-21",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-24",
+    "total": 59,
+    "details": [{
+        "name": "900059",
+        "date": "2016-01-24",
+        "value": 24,
+        "price": 23
+    }, {
+        "name": "900053",
+        "date": "2016-01-24",
+        "value": 18,
+        "price": 53
+    }, {
+        "name": "900064",
+        "date": "2016-01-24",
+        "value": 17,
+        "price": 1
+    }]
+}, {
+    "date": "2016-01-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-26",
+    "total": 26,
+    "details": [{
+        "name": "900085",
+        "date": "2016-01-26",
+        "value": 13,
+        "price": 53
+    }, {
+        "name": "900085",
+        "date": "2016-01-26",
+        "value": 13,
+        "price": 53
+    }]
+}, {
+    "date": "2016-01-27",
+    "total": 11,
+    "details": [{
+        "name": "900085",
+        "date": "2016-01-27",
+        "value": 5,
+        "price": 53
+    }, {
+        "name": "900085",
+        "date": "2016-01-27",
+        "value": 5,
+        "price": 53
+    }]
+}, {
+    "date": "2016-01-28",
+    "total": 43,
+    "details": [{
+        "name": "900100",
+        "date": "2016-01-28",
+        "value": 5,
+        "price": 71
+    }, {
+        "name": "900065",
+        "date": "2016-01-28",
+        "value": 15,
+        "price": 6
+    }, {
+        "name": "900102",
+        "date": "2016-01-28",
+        "value": 23,
+        "price": 39
+    }]
+}, {
+    "date": "2016-01-29",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-30",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-01-31",
+    "total": 74,
+    "details": [{
+        "name": "900084",
+        "date": "2016-01-31",
+        "value": 22,
+        "price": 6
+    }, {
+        "name": "900084",
+        "date": "2016-01-31",
+        "value": 22,
+        "price": 6
+    }, {
+        "name": "900084",
+        "date": "2016-01-31",
+        "value": 15,
+        "price": 6
+    }, {
+        "name": "900084",
+        "date": "2016-01-31",
+        "value": 15,
+        "price": 6
+    }]
+}, {
+    "date": "2016-02-01",
+    "total": 27,
+    "details": [{
+        "name": "900102",
+        "date": "2016-02-01",
+        "value": 10,
+        "price": 56
+    }, {
+        "name": "900106",
+        "date": "2016-02-01",
+        "value": 11,
+        "price": 72
+    }, {
+        "name": "900078",
+        "date": "2016-02-01",
+        "value": 6,
+        "price": 74
+    }]
+}, {
+    "date": "2016-02-02",
+    "total": 11,
+    "details": [{
+        "name": "900082",
+        "date": "2016-02-02",
+        "value": 11,
+        "price": 14
+    }]
+}, {
+    "date": "2016-02-03",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-04",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-06",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-07",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-08",
+    "total": 47,
+    "details": [{
+        "name": "900065",
+        "date": "2016-02-08",
+        "value": 19,
+        "price": 6
+    }, {
+        "name": "900283",
+        "date": "2016-02-08",
+        "value": 23,
+        "price": 58
+    }, {
+        "name": "900032",
+        "date": "2016-02-08",
+        "value": 5,
+        "price": 25
+    }]
+}, {
+    "date": "2016-02-09",
+    "total": 17,
+    "details": [{
+        "name": "900144",
+        "date": "2016-02-09",
+        "value": 17,
+        "price": 11
+    }]
+}, {
+    "date": "2016-02-10",
+    "total": 40,
+    "details": [{
+        "name": "900083",
+        "date": "2016-02-10",
+        "value": 20,
+        "price": 37
+    }, {
+        "name": "900083",
+        "date": "2016-02-10",
+        "value": 20,
+        "price": 37
+    }]
+}, {
+    "date": "2016-02-11",
+    "total": 15,
+    "details": [{
+        "name": "900092",
+        "date": "2016-02-11",
+        "value": 8,
+        "price": 17
+    }, {
+        "name": "900048",
+        "date": "2016-02-11",
+        "value": 7,
+        "price": 75
+    }]
+}, {
+    "date": "2016-02-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-13",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-14",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-15",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-17",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-19",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-21",
+    "total": 30,
+    "details": [{
+        "name": "900174",
+        "date": "2016-02-21",
+        "value": 15,
+        "price": 4
+    }, {
+        "name": "900173",
+        "date": "2016-02-21",
+        "value": 15,
+        "price": 36
+    }]
+}, {
+    "date": "2016-02-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-24",
+    "total": 18,
+    "details": [{
+        "name": "900085",
+        "date": "2016-02-24",
+        "value": 9,
+        "price": 73
+    }, {
+        "name": "900085",
+        "date": "2016-02-24",
+        "value": 9,
+        "price": 73
+    }]
+}, {
+    "date": "2016-02-25",
+    "total": 16,
+    "details": [{
+        "name": "900070",
+        "date": "2016-02-25",
+        "value": 4,
+        "price": 49
+    }, {
+        "name": "900287",
+        "date": "2016-02-25",
+        "value": 11,
+        "price": 54
+    }]
+}, {
+    "date": "2016-02-26",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-27",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-28",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-02-29",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-01",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-02",
+    "total": 44,
+    "details": [{
+        "name": "900085",
+        "date": "2016-03-02",
+        "value": 22,
+        "price": 4
+    }, {
+        "name": "900085",
+        "date": "2016-03-02",
+        "value": 22,
+        "price": 4
+    }]
+}, {
+    "date": "2016-03-03",
+    "total": 106,
+    "details": [{
+        "name": "900148",
+        "date": "2016-03-03",
+        "value": 17,
+        "price": 6
+    }, {
+        "name": "900023",
+        "date": "2016-03-03",
+        "value": 11,
+        "price": 65
+    }, {
+        "name": "900146",
+        "date": "2016-03-03",
+        "value": 9,
+        "price": 66
+    }, {
+        "name": "900194",
+        "date": "2016-03-03",
+        "value": 21,
+        "price": 39
+    }, {
+        "name": "900084",
+        "date": "2016-03-03",
+        "value": 24,
+        "price": 6
+    }, {
+        "name": "900084",
+        "date": "2016-03-03",
+        "value": 24,
+        "price": 6
+    }]
+}, {
+    "date": "2016-03-04",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-05",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-06",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-07",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-09",
+    "total": 10,
+    "details": [{
+        "name": "900215",
+        "date": "2016-03-09",
+        "value": 3,
+        "price": 55
+    }, {
+        "name": "900195",
+        "date": "2016-03-09",
+        "value": 7,
+        "price": 41
+    }]
+}, {
+    "date": "2016-03-10",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-13",
+    "total": 58,
+    "details": [{
+        "name": "900200",
+        "date": "2016-03-13",
+        "value": 22,
+        "price": 68
+    }, {
+        "name": "900072",
+        "date": "2016-03-13",
+        "value": 21,
+        "price": 57
+    }, {
+        "name": "900099",
+        "date": "2016-03-13",
+        "value": 6,
+        "price": 31
+    }, {
+        "name": "900086",
+        "date": "2016-03-13",
+        "value": 5,
+        "price": 41
+    }, {
+        "name": "900086",
+        "date": "2016-03-13",
+        "value": 5,
+        "price": 41
+    }]
+}, {
+    "date": "2016-03-14",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-15",
+    "total": 120,
+    "details": [{
+        "name": "900084",
+        "date": "2016-03-15",
+        "value": 7,
+        "price": 74
+    }, {
+        "name": "900084",
+        "date": "2016-03-15",
+        "value": 7,
+        "price": 74
+    }, {
+        "name": "900086",
+        "date": "2016-03-15",
+        "value": 25,
+        "price": 41
+    }, {
+        "name": "900086",
+        "date": "2016-03-15",
+        "value": 25,
+        "price": 41
+    }, {
+        "name": "900085",
+        "date": "2016-03-15",
+        "value": 22,
+        "price": 73
+    }, {
+        "name": "900085",
+        "date": "2016-03-15",
+        "value": 22,
+        "price": 73
+    }, {
+        "name": "900075",
+        "date": "2016-03-15",
+        "value": 8,
+        "price": 20
+    }, {
+        "name": "900145",
+        "date": "2016-03-15",
+        "value": 4,
+        "price": 69
+    }]
+}, {
+    "date": "2016-03-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-17",
+    "total": 15,
+    "details": [{
+        "name": "900082",
+        "date": "2016-03-17",
+        "value": 9,
+        "price": 68
+    }, {
+        "name": "900212",
+        "date": "2016-03-17",
+        "value": 5,
+        "price": 52
+    }]
+}, {
+    "date": "2016-03-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-19",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-21",
+    "total": 8,
+    "details": [{
+        "name": "900166",
+        "date": "2016-03-21",
+        "value": 8,
+        "price": 31
+    }]
+}, {
+    "date": "2016-03-22",
+    "total": 104,
+    "details": [{
+        "name": "900147",
+        "date": "2016-03-22",
+        "value": 10,
+        "price": 22
+    }, {
+        "name": "900045",
+        "date": "2016-03-22",
+        "value": 18,
+        "price": 74
+    }, {
+        "name": "900186",
+        "date": "2016-03-22",
+        "value": 22,
+        "price": 72
+    }, {
+        "name": "900008",
+        "date": "2016-03-22",
+        "value": 10,
+        "price": 7
+    }, {
+        "name": "900029",
+        "date": "2016-03-22",
+        "value": 22,
+        "price": 66
+    }, {
+        "name": "900153",
+        "date": "2016-03-22",
+        "value": 22,
+        "price": 28
+    }]
+}, {
+    "date": "2016-03-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-24",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-25",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-26",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-27",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-28",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-29",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-30",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-03-31",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-01",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-02",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-03",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-04",
+    "total": 93,
+    "details": [{
+        "name": "900084",
+        "date": "2016-04-04",
+        "value": 19,
+        "price": 6
+    }, {
+        "name": "900084",
+        "date": "2016-04-04",
+        "value": 19,
+        "price": 6
+    }, {
+        "name": "900083",
+        "date": "2016-04-04",
+        "value": 24,
+        "price": 37
+    }, {
+        "name": "900083",
+        "date": "2016-04-04",
+        "value": 24,
+        "price": 37
+    }, {
+        "name": "900222",
+        "date": "2016-04-04",
+        "value": 8,
+        "price": 6
+    }]
+}, {
+    "date": "2016-04-05",
+    "total": 30,
+    "details": [{
+        "name": "900031",
+        "date": "2016-04-05",
+        "value": 16,
+        "price": 67
+    }, {
+        "name": "900088",
+        "date": "2016-04-05",
+        "value": 14,
+        "price": 33
+    }]
+}, {
+    "date": "2016-04-06",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-07",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-08",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-09",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-10",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-11",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-12",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-13",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-14",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-15",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-16",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-17",
+    "total": 33,
+    "details": [{
+        "name": "900116",
+        "date": "2016-04-17",
+        "value": 3,
+        "price": 28
+    }, {
+        "name": "900101",
+        "date": "2016-04-17",
+        "value": 7,
+        "price": 20
+    }, {
+        "name": "900287",
+        "date": "2016-04-17",
+        "value": 23,
+        "price": 54
+    }]
+}, {
+    "date": "2016-04-18",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-19",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-20",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-21",
+    "total": 51,
+    "details": [{
+        "name": "900062",
+        "date": "2016-04-21",
+        "value": 25,
+        "price": 45
+    }, {
+        "name": "900287",
+        "date": "2016-04-21",
+        "value": 18,
+        "price": 54
+    }, {
+        "name": "900195",
+        "date": "2016-04-21",
+        "value": 8,
+        "price": 12
+    }]
+}, {
+    "date": "2016-04-22",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-23",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-24",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-25",
+    "total": 29,
+    "details": [{
+        "name": "900186",
+        "date": "2016-04-25",
+        "value": 4,
+        "price": 72
+    }, {
+        "name": "900117",
+        "date": "2016-04-25",
+        "value": 25,
+        "price": 45
+    }]
+}, {
+    "date": "2016-04-26",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-27",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-28",
+    "total": 0,
+    "details": []
+}, {
+    "date": "2016-04-29",
+    "total": 0,
+    "details": []
+}]
