@@ -107,6 +107,7 @@ app.controller("mainController", function($scope, $http) {
 
     $scope.apply_view();
 
+
     //$http.get('json/sales_with_prices.json')
     //$http.get('json/pur_obj.json')
     //.then(function(res) {
@@ -259,7 +260,7 @@ app.controller("mainController", function($scope, $http) {
         console.log('GeneralCompareByPrice has being called');
         $scope.stroke_type = 'price';
         $scope.salesFilteredData = [];
-        scope.apply_view();
+        $scope.apply_view();
         //$http.get('json/sales_with_prices.json')
         //    .then(function(res) {
         //console.log(res.data);
@@ -287,7 +288,7 @@ app.controller("mainController", function($scope, $http) {
         console.log('itemsCompare has being called');
         $scope.stroke_type = 'general';
         $scope.salesFilteredData = [];
-        scope.apply_view();
+        $scope.apply_view();
         //$http.get('json/sales_with_prices.json')
         //    .then(function(res) {
         //console.log(res.data);

@@ -10,6 +10,7 @@
                 width: 83px;
                 /*width: 20%;*/
             }
+
         </style>
         <meta charset="utf-8">
         <link rel="stylesheet" href="nv.d3.min.css"/>
@@ -32,20 +33,25 @@
     </head>
     <body ng-controller="mainController">
         <div class="">
-          <br>
-          <div class="container" align="left">
-            <div class="col-sm-4">
-              <label for="">
-                  Select View:
-              </label>
-              <select class="form-control" ng-model="selected_view" ng-init="selected_view='sales'" ng-change="apply_view()">
-                  <option value="sales">Sales</option>
-                  <option value="purchases">Purchases</option>
-              </select>
+            <br>
+            <div class="" align="left">
+                <div class="col-sm-2">
+                    <label for="">
+                        Select View:
+                    </label>
+                    <select class="form-control" ng-model="selected_view" ng-init="selected_view='sales'" ng-change="apply_view()">
+                        <option value="sales">Sales</option>
+                        <option value="purchases">Purchases</option>
+                    </select>
+                </div>
             </div>
-          </div>
-          <br>
-            <calendar-heatmap data="data" color="'#ff0000'" overview="'year'" sitem="selectedForStroke.item_number" stype="stroke_type"></calendar-heatmap>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <div class="">
+              <calendar-heatmap data="data" color="'#ff0000'" overview="'year'" sitem="selectedForStroke.item_number" stype="stroke_type"></calendar-heatmap>
+            </div>
             <div style="padding: 50px 30px 50px 20px;">
                 <div class="col-md-8">
                     <div class="container">
@@ -179,7 +185,6 @@
                 </div>
             </div>
         </div>
-        <div class="">
-        </div>
+        <div class=""></div>
     </body>
 </html>
