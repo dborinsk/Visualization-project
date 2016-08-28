@@ -131,22 +131,22 @@ app.controller("mainController", function($scope, $http) {
                 //   });
 
 
-                   $http.get('json/new_sales_with_prices.json')
-                   .then(function(sales) {
-                     for(var i=0; i<sales.data.length; i++){
-                          var total=0;
-                          var total_sales = 0;
-                       for(var z=0; z<sales.data[i].details.length; z++){
-                         if(sales.data[i].details[z].value >=100)
-                            sales.data[i].details[z].value=parseInt(sales.data[i].details[z].value*0.6);
-                         total+=sales.data[i].details[z].value;
-                         total_sales+= (sales.data[i].details[z].value*sales.data[i].details[z].price)
-                             }
-                             sales.data[i].total=total;
-                             sales.data[i].total_sales=total_sales;
-                         }
-                       console.log(JSON.stringify(sales.data));
-                     });
+                //   $http.get('json/new_sales_with_prices.json')
+                //   .then(function(sales) {
+                //      for(var i=0; i<sales.data.length; i++){
+                //           var total=0;
+                //           var total_sales = 0;
+                //       for(var z=0; z<sales.data[i].details.length; z++){
+                //          if(sales.data[i].details[z].value >=100)
+                //             sales.data[i].details[z].value=parseInt(sales.data[i].details[z].value*0.6);
+                //          total+=sales.data[i].details[z].value;
+                //          total_sales+= (sales.data[i].details[z].value*sales.data[i].details[z].price)
+                //              }
+                //              sales.data[i].total=total;
+                //              sales.data[i].total_sales=total_sales;
+                //          }
+                //       console.log(JSON.stringify(sales.data));
+                //      });
 
 
 
