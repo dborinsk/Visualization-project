@@ -13,11 +13,85 @@ app.controller("mainController", function($scope, $http) {
     $scope.itemsOptions = [];
     $scope.stroke_type = 'general';
     $scope.selected_view = 'sales'
+    $scope.total_pur = [];
     $http.get('json/itemsFile.json')
         .then(function(items) {
             $scope.itemsOptions = items.data;
         });
 
+
+    //Math.floor((Math.random() * 10) + 1);
+    //arr = arr2.splice(0, arr2.indexOf('c'));
+    $http.get('json/purch_2808.json').then(function(res) {
+        for (var i = 0; i < res.data.length; i++) {
+            if (res.data[i].details.length > 15) {
+                var num = Math.floor((Math.random() * 2) + 1);
+                var sec = [];
+                var orig = [];
+                orig = res.data[i].details.splice(10, res.data[i].details.length);
+                sec = res.data[i].details.splice(0, 10);
+                res.data[i].details = [];
+                res.data[i].total=0;
+                for (var j = 0; j < sec.length; j++) {
+                    res.data[i - num].total += sec[j].value;
+                    res.data[i - num].details.push(sec[j]);
+                }
+                if(orig.length<16) {
+                  for (var j = 0; j < orig.length; j++) {
+                      res.data[i].total += orig[j].value;
+                      res.data[i].details.push(orig[j]);
+                  }
+                } else {
+                  var tmp = orig.splice(orig.length/2, orig.length);
+                  var tmp2 = orig.splice(0, orig.length/2);
+                  for (var j = 0; j < tmp.length; j++) {
+                      res.data[i].total += tmp[j].value;
+                      res.data[i].details.push(tmp[j]);
+                  }
+                  for (var j = 0; j < tmp2.length; j++) {
+                      res.data[i + num].total += tmp2[j].value;
+                      res.data[i + num].details.push(tmp2[j]);
+                  }
+
+                }
+
+            }
+        }
+        $scope.data=res.data;
+    })
+
+    $http.get('json/sales_with_prices.json')
+        .then(function(res) {
+            var items = [];
+
+            for (var startDate = moment(yearAgo); startDate.isBefore(d); startDate.add(1, 'days')) {
+                var obj = {};
+                obj["date"] = moment(startDate).format("YYYY-MM-DD");
+                obj["total"] = 0;
+                obj["details"] = [];
+                for (var i = 0; i < res.data.length; i++) {
+                  if(moment(startDate).format("YYYY-MM-DD") === moment(res.data[i].date).format("YYYY-MM-DD")) {
+                    for (var j = 0; j < res.data[i].details.length; j++) {
+                        var tmp = {};
+                        tmp['name'] = res.data[i].details[j].name;
+                        tmp['value'] = res.data[i].details[j].value;
+                        tmp['price'] = Math.round(res.data[i].details[j].price*(Math.random() * (0.9 - 0.8) + 0.5));
+                        items.push(tmp);
+                    }
+                  }
+                }
+                if (moment(startDate).day() === 2) {
+                    for (var i = 0; i < items.length; i++) {
+                        obj["total"] += items[i].value;
+                        obj["details"].push(items[i]);
+                    }
+                    items=[];
+                }
+                $scope.total_pur.push(obj);
+
+            }
+            $scope.pur_temp = JSON.stringify($scope.total_pur);
+        })
     //###purchase###
 
     // $http.get('json/purchase_order.json').then(function(pu) {
@@ -98,7 +172,7 @@ app.controller("mainController", function($scope, $http) {
                 })
         } else if ($scope.selected_view === 'purchases') {
             console.log('purchases');
-            $http.get('json/pur_obj.json')
+            $http.get('json/purch_2808.json')
                 .then(function(res) {
                     $scope.data = res.data;
                 })
