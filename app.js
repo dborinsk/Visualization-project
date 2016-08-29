@@ -65,9 +65,9 @@ app.controller("mainController", function($scope, $http) {
 
     //##############
 //a script for generating a json with the total quantities for sold items
-    // $http.get('json/itemsFile.json')
+    // $http.get('json/new_itemsFile.json')
     //             .then(function(itemsFile) {
-    //               $http.get('json/sales_with_prices.json')
+    //               $http.get('json/new_sales_with_prices.json')
     //                   .then(function(sales) {
     //                     //console.log(JSON.stringify(itemsExenteded.data));
     //                       $scope.items = [];
@@ -101,6 +101,35 @@ app.controller("mainController", function($scope, $http) {
     //
     //                     });
     //                   });
+//******************** script for creating an object with all the items and then for each, the total quantity
+                  // $http.get('json/new_sales_with_prices.json')
+                  // .then(function(res) {
+                  //   $scope.allitems = [];
+                  //   $scope.itemswithquantity = [];
+                  // for(var i=0;i<res.data.length;i++) {
+                  //   for(var j=0;j<res.data[i].details.length;j++) {
+                  //     if($scope.allitems.indexOf(res.data[i].details[j].name) === -1)
+                  //       $scope.allitems.push(res.data[i].details[j].name);
+                  //   }
+                  // }
+                  // for(var i=0;i<$scope.allitems.length;i++){
+                  //   var obj = {};
+                  //   obj["item_number"]=$scope.allitems[i];
+                  //   obj["total_quantity"]=0;
+                  //   $scope.itemswithquantity.push(obj)
+                  // }
+                  // for(var i=0;i<res.data.length;i++) {
+                  //   for(var j=0;j<res.data[i].details.length;j++) {
+                  //     for(var z=0; z<$scope.itemswithquantity.length; z++){
+                  //       if(res.data[i].details[j].name===$scope.itemswithquantity[z].item_number){
+                  //         $scope.itemswithquantity[z].total_quantity+=res.data[i].details[j].value;
+                  //       }
+                  //     }
+                  //   }
+                  // }
+                  //          console.log(JSON.stringify($scope.itemswithquantity));
+                  //  });
+
 
 //script to change prices
                 // $http.get('json/itemsFile.json')
@@ -131,22 +160,22 @@ app.controller("mainController", function($scope, $http) {
                 //   });
 
 
-                //   $http.get('json/new_sales_with_prices.json')
-                //   .then(function(sales) {
-                //      for(var i=0; i<sales.data.length; i++){
-                //           var total=0;
-                //           var total_sales = 0;
-                //       for(var z=0; z<sales.data[i].details.length; z++){
-                //          if(sales.data[i].details[z].value >=100)
-                //             sales.data[i].details[z].value=parseInt(sales.data[i].details[z].value*0.6);
-                //          total+=sales.data[i].details[z].value;
-                //          total_sales+= (sales.data[i].details[z].value*sales.data[i].details[z].price)
-                //              }
-                //              sales.data[i].total=total;
-                //              sales.data[i].total_sales=total_sales;
-                //          }
-                //       console.log(JSON.stringify(sales.data));
-                //      });
+                  // $http.get('json/new_sales_with_prices.json')
+                  // .then(function(sales) {
+                  //    for(var i=0; i<sales.data.length; i++){
+                  //         var total=0;
+                  //         var total_sales = 0;
+                  //     for(var z=0; z<sales.data[i].details.length; z++){
+                  //       //  if(sales.data[i].details[z].value >=100)
+                  //           sales.data[i].details[z].value=parseInt(sales.data[i].details[z].value*1.3);
+                  //        total+=sales.data[i].details[z].value;
+                  //        total_sales+= (sales.data[i].details[z].value*sales.data[i].details[z].price)
+                  //            }
+                  //            sales.data[i].total=total;
+                  //            sales.data[i].total_sales=total_sales;
+                  //        }
+                  //     console.log(JSON.stringify(sales.data));
+                  //    });
 
 
 
