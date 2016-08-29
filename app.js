@@ -14,7 +14,9 @@ app.controller("mainController", function($scope, $http) {
     $scope.stroke_type = 'general';
     $scope.selected_view = 'sales'
     $scope.total_pur = [];
-    $http.get('json/itemsFile.json')
+
+    //$http.get('json/itemsFile.json')
+    $http.get('json/new_items_File.json')
         .then(function(items) {
             $scope.itemsOptions = items.data;
         });
@@ -136,6 +138,89 @@ app.controller("mainController", function($scope, $http) {
 
 
     //##############
+//a script for generating a json with the total quantities for sold items
+    // $http.get('json/itemsFile.json')
+    //             .then(function(itemsFile) {
+    //               $http.get('json/sales_with_prices.json')
+    //                   .then(function(sales) {
+    //                     //console.log(JSON.stringify(itemsExenteded.data));
+    //                       $scope.items = [];
+    //                       $scope.items = itemsFile.data;
+    //                       $scope.sales = [];
+    //                       $scope.sales = sales.data;
+    //                       $scope.onlyitems = [];
+    //                       $scope.itemssumofquantity = [];
+    //                       for (var i=0; i<$scope.items.length; i++){
+    //                         $scope.items[i]["totalquantity"]= 0;
+    //                       }
+    //                       for (var i=0; i<$scope.items.length; i++){
+    //                         $scope.onlyitems.push($scope.items[i].item_number);
+    //                       }
+    //
+    //                       for (var i=0; i<$scope.sales.length; i++){
+    //                         for (var j=0; j<$scope.sales[i].details.length; j++){
+    //                           var quantity= $scope.items[$scope.onlyitems.indexOf($scope.sales[i].details[j].name)].totalquantity;
+    //                             quantity+=$scope.sales[i].details[j].value;
+    //                             $scope.items[$scope.onlyitems.indexOf($scope.sales[i].details[j].name)].totalquantity=quantity;
+    //                         }
+    //                       }
+    //                       for (var i=0; i<$scope.items.length; i++){
+    //                         $scope.itemssumofquantity.push({
+    //                           "item_number" :$scope.items[i].item_number,
+    //                           "total_quantity" : $scope.items[i].totalquantity
+    //                         });
+    //                       }
+    //                      console.log(JSON.stringify($scope.itemssumofquantity));
+    //
+    //
+    //                     });
+    //                   });
+
+//script to change prices
+                // $http.get('json/itemsFile.json')
+                // .then(function(res) {
+                // for(var i=0;i<res.data.length;i++) {
+                //       res.data[i].item_unit_price = (parseInt(res.data[i].item_unit_price,10)*3)+2;
+                //   }
+                //          console.log(JSON.stringify(res.data));
+                //  });
+
+                //  $http.get('json/new_items_File.json')
+                //  .then(function(items) {
+                //    $http.get('json/sales_with_prices.json')
+                //    .then(function(sales) {
+                //      for(var i=0; i<sales.data.length; i++){
+                //        sales.data[i].total=0;
+                //         sales.data[i].total_sales=0;
+                //        for(var z=0; z<sales.data[i].details.length; z++){
+                //          sales.data[i].details[z].value= Math.round((sales.data[i].details[z].value)*0.7);
+                //          for(var j=0;j<items.data.length;j++) {
+                //            if(sales.data[i].details[z].name === items.data[j].item_number)
+                //                sales.data[i].details[z].price = items.data[j].item_unit_price;
+                //              }
+                //            }
+                //          }
+                //        console.log(JSON.stringify(sales.data));
+                //      });
+                //   });
+
+
+                //   $http.get('json/new_sales_with_prices.json')
+                //   .then(function(sales) {
+                //      for(var i=0; i<sales.data.length; i++){
+                //           var total=0;
+                //           var total_sales = 0;
+                //       for(var z=0; z<sales.data[i].details.length; z++){
+                //          if(sales.data[i].details[z].value >=100)
+                //             sales.data[i].details[z].value=parseInt(sales.data[i].details[z].value*0.6);
+                //          total+=sales.data[i].details[z].value;
+                //          total_sales+= (sales.data[i].details[z].value*sales.data[i].details[z].price)
+                //              }
+                //              sales.data[i].total=total;
+                //              sales.data[i].total_sales=total_sales;
+                //          }
+                //       console.log(JSON.stringify(sales.data));
+                //      });
 
 
 
@@ -166,7 +251,8 @@ app.controller("mainController", function($scope, $http) {
     $scope.apply_view = function() {
         if ($scope.selected_view === 'sales') {
             console.log('sales');
-            $http.get('json/sales_with_prices.json')
+            // $http.get('json/sales_with_prices.json')
+            $http.get('json/new_sales_with_prices.json')
                 .then(function(res) {
                     $scope.data = res.data;
                 })
