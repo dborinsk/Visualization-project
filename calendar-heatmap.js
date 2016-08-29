@@ -148,15 +148,19 @@ directive('calendarHeatmap', ['$window', function($window) {
              */
             scope.drawYearOverview = function() {
                 // Add current overview to the history
-                console.log(scope.stype);
-                console.log(scope.sitem);
+                //console.log(scope.stype);
+                //console.log(scope.sitem);
                 if (scope.history[scope.history.length - 1] !== scope.overview) {
                     scope.history.push(scope.overview);
                 }
 
                 var first_date = moment(scope.data[0].date);
                 var max_value = d3.max(scope.data, function(d) {
+                  if (scope.stype === 'general') {
                     return d.total;
+                  } else if (scope.stype === 'price') {
+                    return d.total_sales;
+                  }
                 });
                 var color = d3.scale.linear()
                     .range(['#ffffff', scope.color || '#ff4500'])
@@ -178,7 +182,12 @@ directive('calendarHeatmap', ['$window', function($window) {
                     if (max_value <= 0) {
                         return item_size;
                     }
-                    return item_size * 0.75 + (item_size * d.total / max_value) * 0.25;
+                    if(scope.stype === 'general') {
+                      return item_size * 0.75 + (item_size * d.total / max_value) * 0.25;
+                    } else if(scope.stype === 'price') {
+                      return item_size * 0.75 + (item_size * d.total_sales / max_value) * 0.25;
+                    }
+
                 };
                 var calcStroke = function(d) {
                     var item = scope.sitem;
@@ -205,7 +214,7 @@ directive('calendarHeatmap', ['$window', function($window) {
                         if (d.total === 0 || total_price === 0 || d.total === total_price) {
                             return 0;
                         }
-                        return ((total_price / d.total) * 100) * 0.10;
+                        return ((total_price / d.total_sales) * 100) * 0.10;
                     }
 
                 }
@@ -254,11 +263,11 @@ directive('calendarHeatmap', ['$window', function($window) {
                             //console.log(scope.total_item);
                             return color(d.total);
                         } else if (scope.stype==='price' && scope.sitem !== undefined && d.total === scope.total_price && d.details[0].name === scope.sitem) {
-                            //onsole.log('1');
-                            return color2(d.total);
+                            console.log(d.total + ' - ' + d.total_sales);
+                            return color2(d.total_sales);
                         } else if (scope.stype==='price' && scope.sitem !== undefined && d.total > scope.total_price) {
                             //console.log(scope.total_item);
-                            return color(d.total);
+                            return color(d.total_sales);
                         }
 
                     })
@@ -325,7 +334,7 @@ directive('calendarHeatmap', ['$window', function($window) {
                         // Construct tooltip
                         var tooltip_html = '';
                         //tooltip_html += '<div class="header"><strong>' + (d.total ? scope.formatTime(d.total) : 'No time') + ' tracked</strong></div>';
-                        scope.stype==='general' ? tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No ') + ' units</strong></div>' : tooltip_html += '<div class="header"><strong>' + (d.total ? (Math.round(d.total * 100) / 100 ) : '0 ') + ' ILS</strong></div>';
+                        scope.stype==='general' ? tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No ') + ' units</strong></div>' : tooltip_html += '<div class="header"><strong>' + (d.total_sales ? (Math.round(d.total_sales * 100) / 100 ) : '0 ') + ' ILS</strong></div>';
                         tooltip_html += '<div>on ' + moment(d.date).format('dddd, MMM Do YYYY') + '</div><br>';
 
                         // Add summary to the tooltip

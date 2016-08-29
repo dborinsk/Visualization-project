@@ -57,16 +57,16 @@
                     <div class="container">
                         <ul class="nav nav-tabs">
                             <li class="active">
-                                <a data-toggle="tab" href="#home">General comparison by quantity</a>
+                                <a data-toggle="tab" href="#home" ng-click="removeFilteredData()">General comparison by quantity</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#menu1">Two items comparison by quantity</a>
+                                <a data-toggle="tab" href="#menu1" ng-click="removeFilteredData()">Two items comparison by quantity</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#menu2">General comparison by cost</a>
+                                <a data-toggle="tab" href="#menu2" ng-click="filerByPrice()">General comparison by cost</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#menu3">Two items comparison by cost</a>
+                                <a data-toggle="tab" href="#menu3" ng-click="filerByPrice()">Two items comparison by cost</a>
                             </li>
                         </ul>
 
@@ -144,7 +144,7 @@
                                             </button>
                                         </div>
                                         <div class="form-group">
-                                            <button ng-click="removeFilteredData()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled">
+                                            <button ng-click="filerByPrice()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled">
                                                 Remove Filter
                                             </button>
                                         </div>
@@ -173,7 +173,7 @@
                                             </button>
                                         </div>
                                         <div class="form-group">
-                                            <button ng-click="removeFilteredData()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled">
+                                            <button ng-click="filerByPrice()" class="btn btn-danger btn-xs" ng-model="removeFilterBtn" ng-disabled="!btnDisabled">
                                                 Remove Filter
                                             </button>
                                         </div>
