@@ -24,76 +24,142 @@ app.controller("mainController", function($scope, $http) {
 
     //Math.floor((Math.random() * 10) + 1);
     //arr = arr2.splice(0, arr2.indexOf('c'));
-    $http.get('json/purch_2808.json').then(function(res) {
-        for (var i = 0; i < res.data.length; i++) {
-            if (res.data[i].details.length > 15) {
-                var num = Math.floor((Math.random() * 2) + 1);
-                var sec = [];
-                var orig = [];
-                orig = res.data[i].details.splice(10, res.data[i].details.length);
-                sec = res.data[i].details.splice(0, 10);
-                res.data[i].details = [];
-                res.data[i].total=0;
-                for (var j = 0; j < sec.length; j++) {
-                    res.data[i - num].total += sec[j].value;
-                    res.data[i - num].details.push(sec[j]);
-                }
-                if(orig.length<16) {
-                  for (var j = 0; j < orig.length; j++) {
-                      res.data[i].total += orig[j].value;
-                      res.data[i].details.push(orig[j]);
-                  }
-                } else {
-                  var tmp = orig.splice(orig.length/2, orig.length);
-                  var tmp2 = orig.splice(0, orig.length/2);
-                  for (var j = 0; j < tmp.length; j++) {
-                      res.data[i].total += tmp[j].value;
-                      res.data[i].details.push(tmp[j]);
-                  }
-                  for (var j = 0; j < tmp2.length; j++) {
-                      res.data[i + num].total += tmp2[j].value;
-                      res.data[i + num].details.push(tmp2[j]);
-                  }
+    // $http.get('json/purch_2808.json').then(function(res) {
+    //     for (var i = 0; i < res.data.length; i++) {
+    //         if (res.data[i].details.length > 15) {
+    //             var num = Math.floor((Math.random() * 2) + 1);
+    //             var sec = [];
+    //             var orig = [];
+    //             orig = res.data[i].details.splice(10, res.data[i].details.length);
+    //             sec = res.data[i].details.splice(0, 10);
+    //             res.data[i].details = [];
+    //             res.data[i].total = 0;
+    //             for (var j = 0; j < sec.length; j++) {
+    //                 res.data[i - num].total += sec[j].value;
+    //                 res.data[i - num].details.push(sec[j]);
+    //             }
+    //             if (orig.length < 16) {
+    //                 for (var j = 0; j < orig.length; j++) {
+    //                     res.data[i].total += orig[j].value;
+    //                     res.data[i].details.push(orig[j]);
+    //                 }
+    //             } else {
+    //                 var tmp = orig.splice(orig.length / 2, orig.length);
+    //                 var tmp2 = orig.splice(0, orig.length / 2);
+    //                 for (var j = 0; j < tmp.length; j++) {
+    //                     res.data[i].total += tmp[j].value;
+    //                     res.data[i].details.push(tmp[j]);
+    //                 }
+    //                 for (var j = 0; j < tmp2.length; j++) {
+    //                     res.data[i + num].total += tmp2[j].value;
+    //                     res.data[i + num].details.push(tmp2[j]);
+    //                 }
+    //
+    //             }
+    //
+    //         }
+    //     }
+    //     $scope.data = res.data;
+    //     $scope.pur_temp = JSON.stringify($scope.data);
+    // })
 
-                }
+    //fix totals after remove duplicates
+    // $http.get('json/purch_2808.json').then(function(res) {
+    //   $scope.new_data = [];
+    //     for (var i = 0; i < res.data.length; i++) {
+    //       res.data[i].total = 0;
+    //         for (var j = 0; j < res.data[i].details.length; j++) {
+    //           res.data[i].total+=res.data[i].details[j].value;
+    //         }
+    //         $scope.new_data.push(res.data[i]);
+    //     }
+    //     $scope.pur_temp = JSON.stringify($scope.new_data);
+    //
+    // })
 
-            }
-        }
-        $scope.data=res.data;
-    })
 
-    $http.get('json/sales_with_prices.json')
-        .then(function(res) {
-            var items = [];
+    //remove duplicates purchases
+    // $http.get('json/purch_2808.json').then(function(res) {
+    //   $scope.new_data = [];
+    //     var items = [];
+    //     var index = 0;
+    //     for (var i = 0; i < res.data.length; i++) {
+    //         items = [];
+    //         for (var j = 0; j < res.data[i].details.length; j++) {
+    //             if (items.indexOf(res.data[i].details[j].name) === -1) {
+    //                 items.push(res.data[i].details[j].name);
+    //                 index = j;
+    //             } else {
+    //                 res.data[i].details[index].value += res.data[i].details[j].value;
+    //                 //res.data[i].total += res.data[i].details[j].value;
+    //                 res.data[i].details.splice(j, 1);
+    //
+    //             }
+    //         }
+    //         $scope.new_data.push(res.data[i]);
+    //     }
+    //     $scope.pur_temp = JSON.stringify($scope.new_data);
+    //
+    // })
 
-            for (var startDate = moment(yearAgo); startDate.isBefore(d); startDate.add(1, 'days')) {
-                var obj = {};
-                obj["date"] = moment(startDate).format("YYYY-MM-DD");
-                obj["total"] = 0;
-                obj["details"] = [];
-                for (var i = 0; i < res.data.length; i++) {
-                  if(moment(startDate).format("YYYY-MM-DD") === moment(res.data[i].date).format("YYYY-MM-DD")) {
-                    for (var j = 0; j < res.data[i].details.length; j++) {
-                        var tmp = {};
-                        tmp['name'] = res.data[i].details[j].name;
-                        tmp['value'] = res.data[i].details[j].value;
-                        tmp['price'] = Math.round(res.data[i].details[j].price*(Math.random() * (0.9 - 0.8) + 0.5));
-                        items.push(tmp);
-                    }
-                  }
-                }
-                if (moment(startDate).day() === 2) {
-                    for (var i = 0; i < items.length; i++) {
-                        obj["total"] += items[i].value;
-                        obj["details"].push(items[i]);
-                    }
-                    items=[];
-                }
-                $scope.total_pur.push(obj);
+    //fix purchases prices
+    // $http.get('json/purch_2808.json').then(function(res) {
+    //     var items = [];
+    //     var price = 0;
+    //     var cur_item = '';
+    //     for (var i = 0; i < res.data.length; i++) {
+    //         for (var j = 0; j < res.data[i].details.length; j++) {
+    //             if (items.indexOf(res.data[i].details[j].name) === -1) {
+    //                 price = res.data[i].details[j].price;
+    //                 cur_item = res.data[i].details[j].name;
+    //                 items.push(res.data[i].details[j].name);
+    //                 for (var z = 0; z < res.data.length; z++) {
+    //                     for (var t = 0; t < res.data[z].details.length; t++) {
+    //                         if (res.data[z].details[t].name === cur_item) {
+    //                           console.log('old: ' + res.data[z].details[t].price + ' new: ' + price);
+    //                             res.data[z].details[t].price = price;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     $scope.pur_temp = JSON.stringify(res.data);
+    // });
 
-            }
-            $scope.pur_temp = JSON.stringify($scope.total_pur);
-        })
+    //###generate purchases
+    // $http.get('json/new_sales_with_prices.json')
+    //     .then(function(res) {
+    //         var items = [];
+    //
+    //         for (var startDate = moment(yearAgo); startDate.isBefore(d); startDate.add(1, 'days')) {
+    //             var obj = {};
+    //             obj["date"] = moment(startDate).format("YYYY-MM-DD");
+    //             obj["total"] = 0;
+    //             obj["details"] = [];
+    //             for (var i = 0; i < res.data.length; i++) {
+    //               if(moment(startDate).format("YYYY-MM-DD") === moment(res.data[i].date).format("YYYY-MM-DD")) {
+    //                 for (var j = 0; j < res.data[i].details.length; j++) {
+    //                     var tmp = {};
+    //                     tmp['name'] = res.data[i].details[j].name;
+    //                     tmp['value'] = res.data[i].details[j].value;
+    //                     tmp['price'] = Math.round(res.data[i].details[j].price*(Math.random() * (0.9 - 0.8) + 0.5));
+    //                     items.push(tmp);
+    //                 }
+    //               }
+    //             }
+    //             if (moment(startDate).day() === 2) {
+    //                 for (var i = 0; i < items.length; i++) {
+    //                     obj["total"] += items[i].value;
+    //                     obj["details"].push(items[i]);
+    //                 }
+    //                 items=[];
+    //             }
+    //             $scope.total_pur.push(obj);
+    //
+    //         }
+    //         $scope.pur_temp = JSON.stringify($scope.total_pur);
+    //     })
     //###purchase###
 
     // $http.get('json/purchase_order.json').then(function(pu) {
@@ -138,7 +204,7 @@ app.controller("mainController", function($scope, $http) {
 
 
     //##############
-//a script for generating a json with the total quantities for sold items
+    //a script for generating a json with the total quantities for sold items
     // $http.get('json/itemsFile.json')
     //             .then(function(itemsFile) {
     //               $http.get('json/sales_with_prices.json')
@@ -176,51 +242,51 @@ app.controller("mainController", function($scope, $http) {
     //                     });
     //                   });
 
-//script to change prices
-                // $http.get('json/itemsFile.json')
-                // .then(function(res) {
-                // for(var i=0;i<res.data.length;i++) {
-                //       res.data[i].item_unit_price = (parseInt(res.data[i].item_unit_price,10)*3)+2;
-                //   }
-                //          console.log(JSON.stringify(res.data));
-                //  });
+    //script to change prices
+    // $http.get('json/itemsFile.json')
+    // .then(function(res) {
+    // for(var i=0;i<res.data.length;i++) {
+    //       res.data[i].item_unit_price = (parseInt(res.data[i].item_unit_price,10)*3)+2;
+    //   }
+    //          console.log(JSON.stringify(res.data));
+    //  });
 
-                //  $http.get('json/new_items_File.json')
-                //  .then(function(items) {
-                //    $http.get('json/sales_with_prices.json')
-                //    .then(function(sales) {
-                //      for(var i=0; i<sales.data.length; i++){
-                //        sales.data[i].total=0;
-                //         sales.data[i].total_sales=0;
-                //        for(var z=0; z<sales.data[i].details.length; z++){
-                //          sales.data[i].details[z].value= Math.round((sales.data[i].details[z].value)*0.7);
-                //          for(var j=0;j<items.data.length;j++) {
-                //            if(sales.data[i].details[z].name === items.data[j].item_number)
-                //                sales.data[i].details[z].price = items.data[j].item_unit_price;
-                //              }
-                //            }
-                //          }
-                //        console.log(JSON.stringify(sales.data));
-                //      });
-                //   });
+    //  $http.get('json/new_items_File.json')
+    //  .then(function(items) {
+    //    $http.get('json/sales_with_prices.json')
+    //    .then(function(sales) {
+    //      for(var i=0; i<sales.data.length; i++){
+    //        sales.data[i].total=0;
+    //         sales.data[i].total_sales=0;
+    //        for(var z=0; z<sales.data[i].details.length; z++){
+    //          sales.data[i].details[z].value= Math.round((sales.data[i].details[z].value)*0.7);
+    //          for(var j=0;j<items.data.length;j++) {
+    //            if(sales.data[i].details[z].name === items.data[j].item_number)
+    //                sales.data[i].details[z].price = items.data[j].item_unit_price;
+    //              }
+    //            }
+    //          }
+    //        console.log(JSON.stringify(sales.data));
+    //      });
+    //   });
 
 
-                //   $http.get('json/new_sales_with_prices.json')
-                //   .then(function(sales) {
-                //      for(var i=0; i<sales.data.length; i++){
-                //           var total=0;
-                //           var total_sales = 0;
-                //       for(var z=0; z<sales.data[i].details.length; z++){
-                //          if(sales.data[i].details[z].value >=100)
-                //             sales.data[i].details[z].value=parseInt(sales.data[i].details[z].value*0.6);
-                //          total+=sales.data[i].details[z].value;
-                //          total_sales+= (sales.data[i].details[z].value*sales.data[i].details[z].price)
-                //              }
-                //              sales.data[i].total=total;
-                //              sales.data[i].total_sales=total_sales;
-                //          }
-                //       console.log(JSON.stringify(sales.data));
-                //      });
+    //   $http.get('json/new_sales_with_prices.json')
+    //   .then(function(sales) {
+    //      for(var i=0; i<sales.data.length; i++){
+    //           var total=0;
+    //           var total_sales = 0;
+    //       for(var z=0; z<sales.data[i].details.length; z++){
+    //          if(sales.data[i].details[z].value >=100)
+    //             sales.data[i].details[z].value=parseInt(sales.data[i].details[z].value*0.6);
+    //          total+=sales.data[i].details[z].value;
+    //          total_sales+= (sales.data[i].details[z].value*sales.data[i].details[z].price)
+    //              }
+    //              sales.data[i].total=total;
+    //              sales.data[i].total_sales=total_sales;
+    //          }
+    //       console.log(JSON.stringify(sales.data));
+    //      });
 
 
 
