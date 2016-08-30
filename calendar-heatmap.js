@@ -156,7 +156,7 @@ directive('calendarHeatmap', ['$window', function($window) {
 
                 var first_date = moment(scope.data[0].date);
                 var max_value = d3.max(scope.data, function(d) {
-                  if (scope.stype === 'general') {
+                  if (scope.stype === 'general' || scope.stype === 'P&Q') {
                     return d.total;
                   } else if (scope.stype === 'price') {
                     return d.total_sales;
@@ -182,7 +182,7 @@ directive('calendarHeatmap', ['$window', function($window) {
                     if (max_value <= 0) {
                         return item_size;
                     }
-                    if(scope.stype === 'general') {
+                    if(scope.stype === 'general' || scope.stype === 'P&Q') {
                       return item_size * 0.75 + (item_size * d.total / max_value) * 0.25;
                     } else if(scope.stype === 'price') {
                       return item_size * 0.75 + (item_size * d.total_sales / max_value) * 0.25;
@@ -204,7 +204,7 @@ directive('calendarHeatmap', ['$window', function($window) {
                             return 0;
                         }
                         return ((total_item / d.total) * 100) * 0.10;
-                    } else if (scope.stype === 'price') {
+                    } else if (scope.stype === 'price' || scope.stype === 'P&Q') {
                         for (var i = 0; i < d.details.length; i++) {
                             if (d.details[i].name === item) {
                                 total_price += (d.details[i].value * d.details[i].price);
@@ -215,6 +215,8 @@ directive('calendarHeatmap', ['$window', function($window) {
                             return 0;
                         }
                         return ((total_price / d.total_sales) * 100) * 0.10;
+                    } else if(scope.stype === 'P&Q') {
+                      return 0;
                     }
 
                 }
@@ -256,10 +258,9 @@ directive('calendarHeatmap', ['$window', function($window) {
                             return 'transparent';
                         else if (scope.sitem !== undefined && d.total === 0)
                             return 'transparent';
-                        else if (scope.stype==='general' && scope.sitem !== undefined && d.total === scope.total_item && d.details[0].name === scope.sitem) {
-                            //onsole.log('1');
+                        else if ((scope.stype==='general') && scope.sitem !== undefined && d.total === scope.total_item && d.details[0].name === scope.sitem) {
                             return color2(d.total);
-                        } else if (scope.stype==='general' && scope.sitem !== undefined && d.total > scope.total_item) {
+                        } else if ((scope.stype==='general') && scope.sitem !== undefined && d.total > scope.total_item) {
                             //console.log(scope.total_item);
                             return color(d.total);
                         } else if (scope.stype==='price' && scope.sitem !== undefined && d.total === scope.total_price && d.details[0].name === scope.sitem) {
@@ -334,16 +335,24 @@ directive('calendarHeatmap', ['$window', function($window) {
                         // Construct tooltip
                         var tooltip_html = '';
                         //tooltip_html += '<div class="header"><strong>' + (d.total ? scope.formatTime(d.total) : 'No time') + ' tracked</strong></div>';
-                        scope.stype==='general' ? tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No ') + ' units</strong></div>' : tooltip_html += '<div class="header"><strong>' + (d.total_sales ? (Math.round(d.total_sales * 100) / 100 ) : '0 ') + ' ILS</strong></div>';
+                        if(scope.stype==='general') {
+                          tooltip_html += '<div class="header"><strong>' + (d.total ? d.total : 'No ') + ' units</strong></div>';
+                        } else if(scope.stype==='price') {
+                          tooltip_html += '<div class="header"><strong>' + (d.total_sales ? (Math.round(d.total_sales * 100) / 100 ) : '0 ') + ' ILS</strong></div>';
+                        } else if(scope.stype==='P&Q') {
+                          tooltip_html += '<div class="header"><strong>Ratio ' + (d.total ? (Math.round(d.total * 100) / 100 ) : '0 ') + '</strong></div>';
+                        }
                         tooltip_html += '<div>on ' + moment(d.date).format('dddd, MMM Do YYYY') + '</div><br>';
 
                         // Add summary to the tooltip
                         scope.numOfItems = 0;
                         scope.sumOfItemsCost = 0;
+                        scope.units = 0;
                         tooltip_html += '<div><strong><span>Item</span><span>Quantity</span><span>Price</span><span>Cost</span></strong>';
                         angular.forEach(d.summary, function(d) {
                             scope.numOfItems++;
                             scope.sumOfItemsCost += (d.price) * d.value;
+                            scope.units += d.value;
                             if(d.name===scope.sitem) {
                               tooltip_html += '<div style="color:#3b5998"><strong><span>' + d.name + '</span>';
                               //tooltip_html += '<span>' + scope.formatTime(d.value) + '</span></div>';
@@ -360,9 +369,13 @@ directive('calendarHeatmap', ['$window', function($window) {
 
                         });
                         scope.sumOfItemsCost = Math.round(scope.sumOfItemsCost * 100) / 100;
-                        if(scope.stype==='general') {
+                        if(scope.stype==='general' || scope.stype === 'P&Q') {
                           tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
                           tooltip_html += '<div class="header"><strong>' + (scope.sumOfItemsCost) + ' ILS</strong></div>';
+                          scope.stype === 'P&Q' ? tooltip_html += '<div class="header"><strong>' + (scope.units) + ' units</strong></div>': '';
+                        } else if(scope.stype==='price') {
+                          tooltip_html += '<br><div class="header"><strong>' + (scope.numOfItems) + ' items</strong></div>';
+                          tooltip_html += '<div class="header"><strong>' + (scope.units) + ' units</strong></div>';
                         }
 
 
