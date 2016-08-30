@@ -720,6 +720,11 @@ app.controller("mainController", function($scope, $http) {
     $scope.temp = [];
     $scope.filterQuantVSprice = function() {
       console.log('filterQuantVSprice has been called');
+      $scope.item = null;
+      $scope.selectedForStroke = null;
+      $scope.cmprItem1 = null;
+      $scope.cmprItem2 = null;
+      $scope.btnDisabled = false;
       $scope.temp = [];
       $scope.stroke_type = 'P&Q';
         $scope.selected_view === 'sales' ? file = 'json/new_sales_with_prices.json' : file = 'json/purch_2808.json';
