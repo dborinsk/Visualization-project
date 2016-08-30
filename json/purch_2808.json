@@ -582,7 +582,7 @@
     "details": [],
     "total_sales": 0
 }, {
-    "date": "2015-06-04",
+    "date": "2015-06-07",
     "total": 0,
     "details": [],
     "total_sales": 0
@@ -597,7 +597,7 @@
     "details": [],
     "total_sales": 0
 }, {
-    "date": "2015-06-07",
+    "date": "2015-06-04",
     "total": 714,
     "details": [{
         "name": "900028",
@@ -1380,12 +1380,12 @@
     }],
     "total_sales": 10560
 }, {
-    "date": "2015-07-20",
+    "date": "2015-07-21",
     "total": 0,
     "details": [],
     "total_sales": 0
 }, {
-    "date": "2015-07-21",
+    "date": "2015-07-20",
     "total": 609,
     "details": [{
         "name": "900272",
@@ -2345,7 +2345,7 @@
     "details": [],
     "total_sales": 0
 }, {
-    "date": "2015-09-15",
+    "date": "2015-09-21",
     "total": 1063,
     "details": [{
         "name": "900003",
@@ -2471,12 +2471,12 @@
     }],
     "total_sales": 12377
 }, {
-    "date": "2015-09-21",
+    "date": "2015-09-15",
     "total": 0,
     "details": [],
     "total_sales": 0
 }, {
-    "date": "2015-09-22",
+    "date": "2015-09-24",
     "total": 550,
     "details": [{
         "name": "900272",
@@ -2526,7 +2526,7 @@
     "details": [],
     "total_sales": 0
 }, {
-    "date": "2015-09-24",
+    "date": "2015-09-22",
     "total": 0,
     "details": [],
     "total_sales": 0
@@ -2551,7 +2551,7 @@
     "details": [],
     "total_sales": 0
 }, {
-    "date": "2015-09-29",
+    "date": "2015-10-19",
     "total": 274,
     "details": [{
         "name": "900022",
@@ -2823,7 +2823,7 @@
     }],
     "total_sales": 5111
 }, {
-    "date": "2015-10-19",
+    "date": "2015-09-29",
     "total": 0,
     "details": [],
     "total_sales": 0
