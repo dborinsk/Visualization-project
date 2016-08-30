@@ -64,18 +64,18 @@ app.controller("mainController", function($scope, $http) {
     // })
 
     //fix totals after remove duplicates
-    $http.get('json/new_sales_with_prices.json').then(function(res) {
-      $scope.new_data = [];
-        for (var i = 0; i < res.data.length; i++) {
-          res.data[i].total = 0;
-            for (var j = 0; j < res.data[i].details.length; j++) {
-              res.data[i].total+=res.data[i].details[j].value;
-            }
-            $scope.new_data.push(res.data[i]);
-        }
-        $scope.pur_temp = JSON.stringify($scope.new_data);
-
-    })
+    // $http.get('json/new_sales_with_prices.json').then(function(res) {
+    //   $scope.new_data = [];
+    //     for (var i = 0; i < res.data.length; i++) {
+    //       res.data[i].total = 0;
+    //         for (var j = 0; j < res.data[i].details.length; j++) {
+    //           res.data[i].total+=res.data[i].details[j].value;
+    //         }
+    //         $scope.new_data.push(res.data[i]);
+    //     }
+    //     $scope.pur_temp = JSON.stringify($scope.new_data);
+    //
+    // })
 
 
     //remove duplicates purchases
