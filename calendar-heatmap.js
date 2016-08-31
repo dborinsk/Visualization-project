@@ -266,7 +266,7 @@ directive('calendarHeatmap', ['$window', function($window) {
                         } else if (scope.stype==='price' && scope.sitem !== undefined && d.total === scope.total_price && d.details[0].name === scope.sitem) {
                             console.log(d.total + ' - ' + d.total_sales);
                             return color2(d.total_sales);
-                        } else if (scope.stype==='price' && scope.sitem !== undefined && d.total > scope.total_price) {
+                        } else if (scope.stype==='price' && scope.sitem !== undefined && d.total_sales > scope.total_price) {
                             //console.log(scope.total_item);
                             return color(d.total_sales);
                         }

@@ -12,6 +12,7 @@ app.controller("mainController", function($scope, $http) {
     $scope.itemsOptions = [];
     $scope.stroke_type = 'general';
     $scope.selected_view = 'sales'
+    $scope.selected_tab = 1;
     $scope.total_pur = [];
 
     $http.get('json/new_items_File.json')
@@ -26,17 +27,34 @@ app.controller("mainController", function($scope, $http) {
             $http.get('json/new_sales_with_prices.json')
                 .then(function(res) {
                     $scope.data = res.data;
+                    console.log('tab ' + $scope.selected_tab);
+                    if ($scope.selected_tab === 3) {
+                        $scope.GeneralCompareByPrice();
+                    } else if ($scope.selected_tab === 4) {
+                        $scope.itemsCompareByPrice();
+                    } else if ($scope.selected_tab === 2) {
+                        $scope.itemsCompare();
+                    }
                 })
         } else if ($scope.selected_view === 'purchases') {
             console.log('purchases');
             $http.get('json/purch_2808.json')
                 .then(function(res) {
                     $scope.data = res.data;
+                    console.log('tab ' + $scope.selected_tab);
+                    if ($scope.selected_tab === 3) {
+                        $scope.GeneralCompareByPrice();
+                    } else if ($scope.selected_tab === 4) {
+                        $scope.itemsCompareByPrice();
+                    } else if ($scope.selected_tab === 2) {
+                        $scope.itemsCompare();
+                    }
                 })
         }
     }
-
     $scope.apply_view();
+
+
 
 
     $scope.filerByPrice = function() {
@@ -63,6 +81,9 @@ app.controller("mainController", function($scope, $http) {
                         }
                     }
                     $scope.data = $scope.salesFilteredData;
+                    if($scope.selected_tab === 4 ) {
+                      $scope.itemsCompareByPrice();
+                    }
                 });
         }
 
@@ -74,7 +95,6 @@ app.controller("mainController", function($scope, $http) {
         $scope.stroke_type = 'general';
         $scope.salesFilteredData = [];
         $scope.apply_view();
-
     }
 
     $scope.GeneralCompareByPrice = function() {
@@ -139,7 +159,6 @@ app.controller("mainController", function($scope, $http) {
         console.log('itemsCompareByPrice has being called');
         $scope.stroke_type = 'price';
         $scope.salesFilteredData = [];
-        $scope.salesFilteredData = [];
         arrLentgh = 0;
         var file = '';
         $scope.selected_view === 'sales' ? file = 'json/new_sales_with_prices.json' : file = 'json/purch_2808.json';
@@ -163,31 +182,31 @@ app.controller("mainController", function($scope, $http) {
                     }
                     $scope.salesFilteredData.push(tempObject);
                 }
-                $scope.data = $scope.salesFilteredData;
                 $scope.selectedForStroke = $scope.cmprItem2;
+                $scope.data = $scope.salesFilteredData;
+
             });
     }
 
     $scope.temp = [];
     $scope.filterQuantVSprice = function() {
-      console.log('filterQuantVSprice has been called');
-      $scope.apply_view();
-      $scope.item = null;
-      $scope.selectedForStroke = null;
-      $scope.cmprItem1 = null;
-      $scope.cmprItem2 = null;
-      $scope.btnDisabled = false;
-      $scope.temp = [];
-      $scope.stroke_type = 'P&Q';
+        console.log('filterQuantVSprice has been called');
+        $scope.item = null;
+        $scope.selectedForStroke = null;
+        $scope.cmprItem1 = null;
+        $scope.cmprItem2 = null;
+        $scope.btnDisabled = false;
+        $scope.temp = [];
+        $scope.stroke_type = 'P&Q';
         $scope.selected_view === 'sales' ? file = 'json/new_sales_with_prices.json' : file = 'json/purch_2808.json';
         $http.get(file)
             .then(function(res) {
-              console.log($scope.selected_view);
-              for (var i = 0; i < res.data.length; i++) {
-                  res.data[i].total = (res.data[i].total_sales / res.data[i].total);
-                  $scope.temp.push(res.data[i])
-              }
-              $scope.data = $scope.temp;
+                console.log($scope.selected_view);
+                for (var i = 0; i < res.data.length; i++) {
+                    res.data[i].total = (res.data[i].total_sales / res.data[i].total);
+                    $scope.temp.push(res.data[i])
+                }
+                $scope.data = $scope.temp;
             })
 
     }

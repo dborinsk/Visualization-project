@@ -57,19 +57,19 @@
                     <div class="container">
                         <ul class="nav nav-tabs">
                             <li class="active">
-                                <a data-toggle="tab" href="#home" ng-click="removeFilteredData('ok')">General comparison by quantity</a>
+                                <a data-toggle="tab" href="#home" ng-click="removeFilteredData('ok');selected_tab=1">General comparison by quantity</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#menu1" ng-click="removeFilteredData('ok')">Two items comparison by quantity</a>
+                                <a data-toggle="tab" href="#menu1" ng-click="removeFilteredData('ok');selected_tab=2">Two items comparison by quantity</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#menu2" ng-click="filerByPrice()">General comparison by cost</a>
+                                <a data-toggle="tab" href="#menu2" ng-click="filerByPrice();selected_tab=3">General comparison by cost</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#menu3" ng-click="filerByPrice()">Two items comparison by cost</a>
+                                <a data-toggle="tab" href="#menu3" ng-click="filerByPrice();selected_tab=4">Two items comparison by cost</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#menu4" ng-click="filterQuantVSprice()">Ratio Cost/Quantity</a>
+                                <a data-toggle="tab" href="#menu4" ng-click="filterQuantVSprice();selected_tab=5">Ratio Cost/Quantity</a>
                             </li>
                         </ul>
 
